@@ -13,7 +13,7 @@ using Image = UnityEngine.UI.Image;
 
 public class Joke : MonoBehaviour
 {
-    private bool OnPressed = false;
+    public bool OnPressed = false;
     private Vector3 velocity = Vector3.zero;
     private RectTransform MyRT;
     public int value = 0;
