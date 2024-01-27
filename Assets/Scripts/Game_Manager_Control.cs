@@ -94,15 +94,20 @@ public class Game_Manager_Control : MonoBehaviour
 
     void ProcessJokeSelected(Joke joke)
     {
-      // Debug.Log("Broma elegida: " + joke.Id.ToString());
+        Debug.Log("Broma elegida: " + joke.JokeId.ToString());
 
-       TellJoke();
+        TellJoke();
 
 
-        //Process
 
+        // Setear nuevos valores en botón
+        JokeData a = gameData.GetNewRandomJoke();
+
+        joke.ChangeJokeid(a.JokeId, a.Text);
 
     }
+
+
 
 
 
