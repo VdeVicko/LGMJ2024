@@ -71,7 +71,7 @@ public class Joke : MonoBehaviour
 
         void UpdateJoke()
         {
-            MyRT.position = ButtonPoint.position;
+            MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(+130, 0, 0), ref velocity, 0.1f); ;
             OnPressed = false;
         }
     }

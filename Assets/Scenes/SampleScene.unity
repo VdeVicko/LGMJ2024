@@ -730,7 +730,11 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
   State: 0
   GenericJoke: {fileID: 1759792418}
-  SelectableJokes: []
+  SelectableJokes:
+  - {fileID: 1759792418}
+  - {fileID: 1174933749}
+  - {fileID: 1571861670}
+  - {fileID: 2015466486}
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,6 +1088,17 @@ RectTransform:
   m_AnchoredPosition: {x: -90.36023, y: -157.93573}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1174933749 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+  m_PrefabInstance: {fileID: 740064350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcbb769606737941a2fb935ca2eca8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1280168526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,6 +1302,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1571861670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+  m_PrefabInstance: {fileID: 1280168526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcbb769606737941a2fb935ca2eca8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1636280605
@@ -2197,6 +2223,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.08, y: 0.049999993, z: 0.016415296}
   m_Center: {x: 2.5810378e-12, y: 0.000000015321218, z: -0.004736471}
+--- !u!114 &2015466486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+  m_PrefabInstance: {fileID: 693932465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcbb769606737941a2fb935ca2eca8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100254440
 GameObject:
   m_ObjectHideFlags: 0
