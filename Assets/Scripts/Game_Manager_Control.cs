@@ -83,7 +83,7 @@ public class Game_Manager_Control : MonoBehaviour
             if (SelectableJokes[i].OnPressed)
             {
 
-                ProcessJokeSelected(SelectableJokes[i]);
+                ProcessSelectedJokeButton(SelectableJokes[i]);
                 
                 // desactivar como seleccioando
                 SelectableJokes[i].OnPressed = false;
@@ -92,18 +92,19 @@ public class Game_Manager_Control : MonoBehaviour
 
     }
 
-    void ProcessJokeSelected(Joke joke)
+    void ProcessSelectedJokeButton(Joke jokeButton)
     {
-        Debug.Log("Broma elegida: " + joke.JokeId.ToString());
+        Debug.Log("Broma elegida: " + jokeButton.JokeId.ToString());
 
         TellJoke();
 
-         
-
         // Setear nuevos valores en botón
-        JokeData a = gameData.GetNewRandomJoke();
+        JokeData newJoke = gameData.GetNewRandomJoke();
 
-        joke.ChangeJokeid(a.JokeId, a.Text);
+        Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
+
+        // Mandar la nueva broma a los botones
+        jokeButton.ChangeJokeid(newJoke.JokeId, newJoke.Text);
 
     }
 
