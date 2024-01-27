@@ -21,10 +21,11 @@ public class Joke : MonoBehaviour
     private RectTransform MyRT;
     public int value = 0;
     private TMP_Text text;
-   
+    public Transform ButtonPoint;
+
     float duration;
     float bitingHumor;
-    float inteligence ;
+    float inteligence;
     float happines;
     string theme;
 
@@ -39,19 +40,20 @@ public class Joke : MonoBehaviour
 
     public void Start()
     {
+
         MyRT = GetComponent<RectTransform>();
         text = GetComponentInChildren<TMP_Text>();
     }
     public void Update()
     {
-        if(OnPressed )
+        if (OnPressed)
         {
             MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
         }
 
-        if(MyRT.anchoredPosition3D.x < -304f)
+        if (MyRT.anchoredPosition3D.x > 304f)
         {
-          
+            UpdateJoke();
         }
 
     }
@@ -61,14 +63,16 @@ public class Joke : MonoBehaviour
         OnPressed = true;
     }
 
-    public void ChangeJokeid(int newjokeid,string newtext)
-    {
-        id = newjokeid;
-        UpdateJoke();
+        public void ChangeJokeid(int newjokeid, string newtext)
+        {
+            id = newjokeid;
+            UpdateJoke();
+        }
+
+        void UpdateJoke()
+        {
+            MyRT.position = ButtonPoint.position;
+            OnPressed = false;
+        }
     }
 
-    void UpdateJoke()
-    {
-       
-    }
-}

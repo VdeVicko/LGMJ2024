@@ -479,6 +479,10 @@ PrefabInstance:
       propertyPath: number
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: ButtonPoint
+      value: 
+      objectReference: {fileID: 1104252111}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -679,6 +683,10 @@ PrefabInstance:
       propertyPath: number
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: ButtonPoint
+      value: 
+      objectReference: {fileID: 972647328}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,6 +730,7 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
   State: 0
   GenericJoke: {fileID: 1759792418}
+  SelectableJokes: []
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,6 +1180,10 @@ PrefabInstance:
       propertyPath: number
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: ButtonPoint
+      value: 
+      objectReference: {fileID: 363837299}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2348,6 +2361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: ButtonPoint
+      value: 
+      objectReference: {fileID: 927148752}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
