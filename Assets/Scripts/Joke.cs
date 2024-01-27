@@ -14,6 +14,7 @@ using Unity.VisualScripting;
 
 public class Joke : MonoBehaviour
 {
+    bool moving;
     GameData gameData;
     public int JokeId;
     public int id;
@@ -22,7 +23,7 @@ public class Joke : MonoBehaviour
     private RectTransform MyRT;
     public int value = 0;
     private TMP_Text text;
-    public Transform ButtonPoint;
+    public GameObject ButtonPoint;
 
     float duration;
     float bitingHumor;
@@ -43,18 +44,21 @@ public class Joke : MonoBehaviour
     {
 
         MyRT = GetComponent<RectTransform>();
+    
         text = GetComponentInChildren<TMP_Text>();
     }
     public void Update()
     {
-        if (OnPressed)
+        if (OnPressed || moving)
         {
             MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
+            moving = true;
         }
 
         if (MyRT.anchoredPosition3D.x > 304f)
         {
             UpdateJoke();
+            moving = false;
         }
 
     }
@@ -73,8 +77,8 @@ public class Joke : MonoBehaviour
 
         void UpdateJoke()
         {
-            MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(+130, 0, 0), ref velocity, 0.1f); ;
-            OnPressed = false;
+          //  MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, ButtonPoint., ref velocity, 0.1f); ;
+            
 
         
           

@@ -80,7 +80,7 @@ public class Npc_Controller : MonoBehaviour
 
     }
 
-    void SetData()
+    void SetData(NPCData newData)
     {
 
     }
