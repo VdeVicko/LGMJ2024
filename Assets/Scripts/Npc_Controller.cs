@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Npc_Controller : MonoBehaviour
 {
-    
+    public Rigidbody rb;
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
 
@@ -22,6 +22,7 @@ public class Npc_Controller : MonoBehaviour
 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         Resistance = new int[ResistanceCount];
     }
     private void Update()
@@ -66,7 +67,7 @@ public class Npc_Controller : MonoBehaviour
 
     void Laugh()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.up * Happiness,ForceMode.Impulse);
+        rb.AddForce(transform.up * Happiness,ForceMode.Impulse);
     }
 
     void Complain()
