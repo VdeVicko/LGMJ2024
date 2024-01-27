@@ -79,4 +79,9 @@ public class Npc_Controller : MonoBehaviour
     {
 
     }
+
+    void SetData()
+    {
+
+    }
 }

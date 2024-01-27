@@ -27,6 +27,8 @@ public class GameData : ScriptableObject
         return jokes[rnd];
     }
 
+   
+        
     JokeData[] jokes = new JokeData[] {
         new(1,
             "\"Estaba con un amigo el otro día y lo veo hablando solo. Me acerco y le pregunto, '¿Qué haces hablando con tus zapatillas?' Y él, con la mayor seriedad del mundo, me responde, 'Pues dice Converse'. Me lo quedo mirando raro, y el solo se queda pensando y dice, 'Oye, es publicidad engañosa si no responden, ¿no crees?' Allí recordé que sus papas eran hermanos y todo cobró sentido." ),
