@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class Game_Manager_Control : MonoBehaviour
     public int State;
     public Joke GenericJoke;
 
-    public List<Joke> SelectableJokes;
+    public List<Joke> JokeButtons;
 
     public List<Npc_Controller> NPCs;
 
@@ -38,15 +39,15 @@ public class Game_Manager_Control : MonoBehaviour
     private void Update()
     {
         // Verificar cual fue precionado y mandar a procesar
-        for (int i = 0; i < SelectableJokes.Count; i++)
+        for (int i = 0; i < JokeButtons.Count; i++)
         {
-            if (SelectableJokes[i].OnPressed)
+            if (JokeButtons[i].OnPressed)
             {
 
-                ProcessSelectedJokeButton(SelectableJokes[i]);
-                
+                ProcessSelectedJokeButton(JokeButtons[i]);
+
                 // desactivar como seleccioando
-                SelectableJokes[i].OnPressed = false;
+                JokeButtons[i].OnPressed = false;
             }
         }
 
@@ -56,7 +57,15 @@ public class Game_Manager_Control : MonoBehaviour
 
     void SetupNPCs()
     {
-        gameData.GetNPCDataByLevel(0);
+        NPCData[] npcData = gameData.GetNPCDataByLevel(0);
+
+        int len = Math.Min(npcData.Length, NPCs.Count);
+        
+        for (int i = 0; i < len; i++)
+        {
+            if (NPCs[i]) 
+                NPCs[i].SetData(npcData[i]);
+        }
 
     }
 
