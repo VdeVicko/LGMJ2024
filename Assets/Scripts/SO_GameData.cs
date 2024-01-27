@@ -3,20 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//using JokeData;
 
-struct JokeData
-{
-    public int JokeId;
 
-    public string Text;
 
-    public JokeData(int jokeId, string text)
-    {
-        JokeId = jokeId;
-        Text = text;
-    }
-   
-}
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/GameData", order = 1)]
 public class GameData : ScriptableObject

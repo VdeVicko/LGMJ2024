@@ -98,7 +98,7 @@ public class Game_Manager_Control : MonoBehaviour
 
         TellJoke();
 
-
+         
 
         // Setear nuevos valores en botón
         JokeData a = gameData.GetNewRandomJoke();
