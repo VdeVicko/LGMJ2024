@@ -13,17 +13,18 @@ using Image = UnityEngine.UI.Image;
 
 public class Joke : MonoBehaviour
 {
+    public int id;
     public bool OnPressed = false;
     private Vector3 velocity = Vector3.zero;
     private RectTransform MyRT;
     public int value = 0;
+    private TMP_Text text;
    
     float duration;
     float bitingHumor;
     float inteligence ;
     float happines;
     string theme;
-    Image image;
 
     public Joke(float _Duration, float _BitingHumor, float _Inteligence, float _Happines, string _Theme)
     {
@@ -37,19 +38,18 @@ public class Joke : MonoBehaviour
     public void Start()
     {
         MyRT = GetComponent<RectTransform>();
+        text = GetComponentInChildren<TMP_Text>();
     }
     public void Update()
     {
         if(OnPressed )
         {
-            MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(130, 0, 0), ref velocity, 0.1f);
-
-            
+            MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
         }
 
         if(MyRT.anchoredPosition3D.x < -304f)
         {
-            Destroy(gameObject);
+          
         }
 
     }
@@ -57,5 +57,14 @@ public class Joke : MonoBehaviour
     {
         value = 1;
         OnPressed = true;
+    }
+
+    public void ChangeJoke(Joke joke)
+    {
+        duration = joke.duration;
+        bitingHumor = joke.bitingHumor;
+        inteligence = joke.inteligence;
+        happines = joke.happines;
+        theme = joke.theme;
     }
 }
