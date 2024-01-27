@@ -61,18 +61,18 @@ public class Game_Manager_Control : MonoBehaviour
         DoubleLinkedList<Joke> mylist = new DoubleLinkedList<Joke>();
     }
 
-    public void TellJoke()
-    {
-        Debug.Log("Telling joke");
-        FinishJoke();
-    }
-
     public void FinishJoke()
     {
         timer++;
         State = 3;
         //GenericJoke.value = 0;
         Debug.Log("Joke finished.");
+    }
+
+    public void TellJoke()
+    {
+        Debug.Log("Telling joke");
+        FinishJoke();
     }
 
     private void Update()
@@ -90,16 +90,11 @@ public class Game_Manager_Control : MonoBehaviour
             }
         }
 
-
-        //if (GenericJoke.value > 0)
-        //{
-            
-        //}
     }
 
     void ProcessJokeSelected(Joke joke)
     {
-       Debug.Log("Broma elegida: " + joke.Id.ToString());
+      // Debug.Log("Broma elegida: " + joke.Id.ToString());
 
        TellJoke();
 
