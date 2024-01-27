@@ -14,7 +14,6 @@ public class Game_Manager_Control : MonoBehaviour
     public Joke GenericJoke;
 
     public List<Joke> JokeButtons;
-    public List<JokeData> JokeData;
 
     public List<Npc_Controller> NPCs;
 
@@ -95,18 +94,36 @@ public class Game_Manager_Control : MonoBehaviour
     {
         Debug.Log("Broma elegida: " + jokeButton.GetJokeData().JokeId.ToString());
 
-        TellJoke();
+        //Obtener valores de broma
+        JokeData currentJokeData = jokeButton.GetJokeData();
 
         // Setear nuevos valores en botón
         JokeData newJoke = gameData.GetNewRandomJoke();
-
+        jokeButton.SetJokeData(newJoke);
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
 
-        // Mandar la nueva broma a los botones
-        jokeButton.SetJokeData(newJoke);
+        // Ejecutar animacion de contar broma
+        TellJoke();
+
+        // Procesar broma por el publico
+        foreach (var npc in NPCs)
+        {
+            ProcessJokeByNPC(npc, currentJokeData);
+        }
+
+
+
+
+
 
     }
 
+    void ProcessJokeByNPC(Npc_Controller npc, JokeData jokeData)
+    {
+        int jokeHappines = 0;
+
+
+    }
 
 
 

@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class Npc_Controller : MonoBehaviour
 {
+    public struct JokeResponce
+    {
+
+    } ;
+
+    JokeResponce currentJokeResponce;
+
+
     public Rigidbody rb;
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
@@ -21,6 +29,8 @@ public class Npc_Controller : MonoBehaviour
     // Enfermedad, Religion,C,D
 
     private NPCData data;
+
+
 
 
     void Start()
