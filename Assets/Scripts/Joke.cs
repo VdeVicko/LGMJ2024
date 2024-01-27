@@ -61,14 +61,14 @@ public class Joke : MonoBehaviour
         OnPressed = true;
     }
 
-    public void ChangeJokeid(int jokeid)
+    public void ChangeJokeid(int newjokeid,string newtext)
     {
-        id = jokeid;
+        id = newjokeid;
         UpdateJoke();
     }
 
     void UpdateJoke()
     {
-       ;
+       
     }
 }
