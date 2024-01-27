@@ -16,7 +16,6 @@ public class Joke : MonoBehaviour
 {
     bool moving;
     GameData gameData;
-    public int JokeId;
     public int id;
     public bool OnPressed = false;
     private Vector3 velocity = Vector3.zero;
@@ -25,19 +24,24 @@ public class Joke : MonoBehaviour
     private TMP_Text text;
     public GameObject ButtonPoint;
 
-    float duration;
-    float bitingHumor;
-    float inteligence;
-    float happines;
-    string theme;
 
+    private JokeData data;
+
+
+    //public int JokeId;
+    //float duration;
+    //float bitingHumor;
+    //float inteligence;
+    //float happines;
+    //string theme;
+    
     public Joke(float _Duration, float _BitingHumor, float _Inteligence, float _Happines, string _Theme)
     {
-        this.duration = _Duration;
-        this.bitingHumor = _BitingHumor;
-        this.inteligence = _Inteligence;
-        this.happines = _Happines;
-        this.theme = _Theme;
+        //this.duration = _Duration;
+        //this.bitingHumor = _BitingHumor;
+        //this.inteligence = _Inteligence;
+        //this.happines = _Happines;
+        //this.theme = _Theme;
     }
 
     public void Start()
@@ -68,20 +72,22 @@ public class Joke : MonoBehaviour
         OnPressed = true;
     }
 
-        public void ChangeJokeid(int newjokeid, string newtext)
-        {
-            id = newjokeid;
-         text.text = newtext;
-          
-        }
-
-        void UpdateJoke()
-        {
-          //  MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, ButtonPoint., ref velocity, 0.1f); ;
-            
-
-        
-          
-        }
+    public void SetJokeData(JokeData newData)
+    {
+        data = newData;
+        //id = newjokeid;
+        text.text = data.Text;
     }
+
+    public JokeData GetJokeData()
+    {
+        return data;
+    }
+
+    void UpdateJoke()
+    {
+        //  MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, ButtonPoint., ref velocity, 0.1f); ;
+
+    }
+}
 

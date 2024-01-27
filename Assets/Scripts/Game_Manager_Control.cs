@@ -14,12 +14,20 @@ public class Game_Manager_Control : MonoBehaviour
     public Joke GenericJoke;
 
     public List<Joke> JokeButtons;
+    public List<JokeData> JokeData;
 
     public List<Npc_Controller> NPCs;
 
     public void Start()
     {
+        Invoke("Initialize", 0.1f);
+    }
+
+    void Initialize()
+    {
         SetupNPCs();
+
+        SetupJokeButtons(); 
     }
 
     public void FinishJoke()
@@ -38,6 +46,8 @@ public class Game_Manager_Control : MonoBehaviour
 
     private void Update()
     {
+        //if (!started) { Initialize(); started = true;}
+
         // Verificar cual fue precionado y mandar a procesar
         for (int i = 0; i < JokeButtons.Count; i++)
         {
@@ -69,12 +79,21 @@ public class Game_Manager_Control : MonoBehaviour
 
     }
 
+    void SetupJokeButtons()
+    {
+        foreach (Joke jokeButton in JokeButtons)
+        {
+            JokeData newJoke = gameData.GetNewRandomJoke();
+
+            jokeButton.SetJokeData(newJoke);
+        }
+    }
 
 
 
     void ProcessSelectedJokeButton(Joke jokeButton)
     {
-        Debug.Log("Broma elegida: " + jokeButton.JokeId.ToString());
+        Debug.Log("Broma elegida: " + jokeButton.GetJokeData().JokeId.ToString());
 
         TellJoke();
 
@@ -84,7 +103,7 @@ public class Game_Manager_Control : MonoBehaviour
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
 
         // Mandar la nueva broma a los botones
-        jokeButton.ChangeJokeid(newJoke.JokeId, newJoke.Text);
+        jokeButton.SetJokeData(newJoke);
 
     }
 

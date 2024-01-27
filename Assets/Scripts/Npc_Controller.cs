@@ -20,6 +20,9 @@ public class Npc_Controller : MonoBehaviour
     public int[] Resistance;
     // Enfermedad, Religion,C,D
 
+    private NPCData data;
+
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -82,6 +85,11 @@ public class Npc_Controller : MonoBehaviour
 
     public void SetData(NPCData newData)
     {
+        data = newData;
+    }
 
+    public NPCData GetData()
+    {
+        return data;
     }
 }
