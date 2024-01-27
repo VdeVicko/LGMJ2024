@@ -71,7 +71,7 @@ public class Joke : MonoBehaviour
         public void ChangeJokeid(int newjokeid, string newtext)
         {
             id = newjokeid;
-         text.text = newtext;
+         text.text = newtext.ToShortString(40);
           
         }
 

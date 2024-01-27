@@ -343,8 +343,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 963194227}
+  m_PlaneDistance: 2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -471,9 +471,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460779736167343265, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: GameData
+      value: 
+      objectReference: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
     - target: {fileID: 5459523417025903877, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: m_Name
       value: Button (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: id
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: number
@@ -482,7 +490,27 @@ PrefabInstance:
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: ButtonPoint
       value: 
-      objectReference: {fileID: 1104252111}
+      objectReference: {fileID: 1104252110}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_verticalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_horizontalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -675,9 +703,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460779736167343265, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: GameData
+      value: 
+      objectReference: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
     - target: {fileID: 5459523417025903877, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: m_Name
       value: Button (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: id
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: number
@@ -686,7 +722,27 @@ PrefabInstance:
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: ButtonPoint
       value: 
-      objectReference: {fileID: 972647328}
+      objectReference: {fileID: 972647327}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_verticalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_horizontalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -735,6 +791,7 @@ MonoBehaviour:
   - {fileID: 1174933749}
   - {fileID: 1571861670}
   - {fileID: 2015466486}
+  NPCs: []
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0
@@ -1187,9 +1244,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460779736167343265, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: GameData
+      value: 
+      objectReference: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
     - target: {fileID: 5459523417025903877, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: m_Name
       value: Button (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: id
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: number
@@ -1198,7 +1263,27 @@ PrefabInstance:
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: ButtonPoint
       value: 
-      objectReference: {fileID: 363837299}
+      objectReference: {fileID: 363837298}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_verticalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_horizontalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2394,6 +2479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460779736167343265, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: GameData
+      value: 
+      objectReference: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
     - target: {fileID: 5459523417025903877, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -2401,7 +2490,27 @@ PrefabInstance:
     - target: {fileID: 5497417048464494087, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
       propertyPath: ButtonPoint
       value: 
-      objectReference: {fileID: 927148752}
+      objectReference: {fileID: 927148751}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_verticalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_horizontalMapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502616450041898972, guid: 4ea9c76516ee8e947b60be28b1af43ac, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
