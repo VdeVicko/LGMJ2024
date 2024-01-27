@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Build;
 using UnityEngine.Assertions.Must;
+using UnityEngine.UIElements;
 
 public class Game_Manager_Control : MonoBehaviour
 {
     public float timer=0;
-   
+    public GameData gameData; 
     public int State;
-    public Chiste GenericJoke;
-    class DiubleLinkedList<T>
+    public Joke GenericJoke;
+    class DoubleLinkedList<T>
     {
         private class nodo
         {
@@ -23,14 +24,13 @@ public class Game_Manager_Control : MonoBehaviour
                 previus = null;
                 Value = t;
             }
-
         }
         nodo Head = null;
         int lenght = 0;
 
-        public void InsertAtEnd(T chiste)
+        public void InsertAtEnd(T joke)
         {
-            nodo newNodo = new nodo(chiste);
+            nodo newNodo = new nodo(joke);
             if(Head == null)
             {
                 Head = newNodo;
@@ -52,25 +52,16 @@ public class Game_Manager_Control : MonoBehaviour
             }
         }
     }
-
-    DiubleLinkedList<Chiste> mylist = new DiubleLinkedList<Chiste>();
-    
-    /*public IEnumerator TellJokerRoutinen(float duration)
-    {
-        yield return new WaitForSeconds(0);
-        while(true)
-        {
-            Debug.Log("Alonso");
-            yield return new WaitForSeconds(duration);
-        }
-    }*/
+ 
     public void Start()
     {
-        //StartCoroutine(TellJokerRoutinen(2));
+        DoubleLinkedList<Joke> mylist = new DoubleLinkedList<Joke>();
     }
+
     public void TellJoke()
     {
-            FinishJoke();
+        Debug.Log("Telling joke");
+        FinishJoke();
     }
     
     public void FinishJoke()
@@ -78,6 +69,7 @@ public class Game_Manager_Control : MonoBehaviour
         timer++;
         State = 3;
         GenericJoke.value = 0;
+        Debug.Log("Joke finished.");
     }
 
     private void Update()
