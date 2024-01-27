@@ -10,19 +10,18 @@ public struct NPCData
 
     public int AcidityResistance;
 
-    public List<string> KnowReferences;
-
     public int[] ThemeRecistance;
 
+    public List<string> KnowReferences;
 
 
-    public NPCData(int generalHumor, int acidityResistance)
+    public NPCData(int generalHumor, int acidityResistance, int[] themes, List<string> references )
     { 
         Id = 0;
         GeneralHumor = generalHumor;
         AcidityResistance = acidityResistance;
-        KnowReferences = new List<string>();
-        ThemeRecistance = new int[0];
+        ThemeRecistance = themes;
+        KnowReferences = references;
     }
 
 }

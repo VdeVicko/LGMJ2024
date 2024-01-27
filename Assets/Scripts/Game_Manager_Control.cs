@@ -11,54 +11,14 @@ public class Game_Manager_Control : MonoBehaviour
     public GameData gameData;
     public int State;
     public Joke GenericJoke;
-    class DoubleLinkedList<T>
-    {
-        private class nodo
-        {
-            public nodo next;
-            public nodo previus;
-            public T Value;
-            public nodo(T t)
-            {
-                next = null;
-                previus = null;
-                Value = t;
-            }
-        }
-        nodo Head = null;
-        int lenght = 0;
-
-        public void InsertAtEnd(T joke)
-        {
-            nodo newNodo = new nodo(joke);
-            if (Head == null)
-            {
-                Head = newNodo;
-                lenght++;
-            }
-            else
-            {
-                nodo tmp = Head;
-                for (int i = 0; i < lenght; i++)
-                {
-                    if (tmp.next != null)
-                    {
-                        tmp = tmp.next;
-                    }
-                }
-                tmp.next = newNodo;
-                newNodo.previus = tmp;
-                lenght++;
-            }
-        }
-    }
-
 
     public List<Joke> SelectableJokes;
 
+    public List<Npc_Controller> NPCs;
+
     public void Start()
     {
-        DoubleLinkedList<Joke> mylist = new DoubleLinkedList<Joke>();
+        SetupNPCs();
     }
 
     public void FinishJoke()
@@ -91,6 +51,17 @@ public class Game_Manager_Control : MonoBehaviour
         }
 
     }
+
+
+
+    void SetupNPCs()
+    {
+        gameData.GetNPCDataByLevel(0);
+
+    }
+
+
+
 
     void ProcessSelectedJokeButton(Joke jokeButton)
     {
