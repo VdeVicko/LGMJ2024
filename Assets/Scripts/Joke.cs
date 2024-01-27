@@ -51,6 +51,7 @@ public class Joke : MonoBehaviour
     
         text = GetComponentInChildren<TMP_Text>();
     }
+
     public void Update()
     {
         if (OnPressed || moving)
@@ -63,6 +64,7 @@ public class Joke : MonoBehaviour
         {
             UpdateJoke();
             moving = false;
+
         }
 
     }
@@ -77,6 +79,9 @@ public class Joke : MonoBehaviour
         data = newData;
         //id = newjokeid;
         text.text = data.Text;
+
+
+
     }
 
     public JokeData GetJokeData()
