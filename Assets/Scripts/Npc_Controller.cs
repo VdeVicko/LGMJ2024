@@ -51,7 +51,7 @@ public class Npc_Controller : MonoBehaviour
                 Idle();
                 break;
             case 2:
-                //StartCoroutine(LaughJumps());
+            
                 Laugh();
                 break;
             case 3:
@@ -67,7 +67,7 @@ public class Npc_Controller : MonoBehaviour
 
     void Laugh()
     {
-        rb.AddForce(transform.up * Happiness,ForceMode.Impulse);
+      //  rb.AddForce(transform.up * Happiness,ForceMode.Impulse);
     }
 
     void Complain()
