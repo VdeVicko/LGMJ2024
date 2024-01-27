@@ -71,7 +71,7 @@ public class Game_Manager_Control : MonoBehaviour
     {
         timer++;
         State = 3;
-        GenericJoke.value = 0;
+        //GenericJoke.value = 0;
         Debug.Log("Joke finished.");
     }
 
@@ -91,14 +91,21 @@ public class Game_Manager_Control : MonoBehaviour
         }
 
 
-        if (GenericJoke.value > 0)
-        {
-            TellJoke();
-        }
+        //if (GenericJoke.value > 0)
+        //{
+            
+        //}
     }
 
     void ProcessJokeSelected(Joke joke)
     {
+       Debug.Log("Broma elegida: " + joke.Id.ToString());
+
+       TellJoke();
+
+
+        //Process
+
 
     }
 
