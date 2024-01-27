@@ -8,11 +8,13 @@ using UnityEditor.Callbacks;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using Unity.VisualScripting;
 
 
 
 public class Joke : MonoBehaviour
 {
+    public int JokeId;
     public int id;
     public bool OnPressed = false;
     private Vector3 velocity = Vector3.zero;
@@ -59,12 +61,14 @@ public class Joke : MonoBehaviour
         OnPressed = true;
     }
 
-    public void ChangeJoke(Joke joke)
+    public void ChangeJokeid(int jokeid)
     {
-        duration = joke.duration;
-        bitingHumor = joke.bitingHumor;
-        inteligence = joke.inteligence;
-        happines = joke.happines;
-        theme = joke.theme;
+        id = jokeid;
+        UpdateJoke();
+    }
+
+    void UpdateJoke()
+    {
+       ;
     }
 }
