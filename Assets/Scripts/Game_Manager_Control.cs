@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 
 public class Game_Manager_Control : MonoBehaviour
 {
-    public float timer=0;
-    public GameData gameData; 
+    public float timer = 0;
+    public GameData gameData;
     public int State;
     public Joke GenericJoke;
     class DoubleLinkedList<T>
@@ -31,7 +31,7 @@ public class Game_Manager_Control : MonoBehaviour
         public void InsertAtEnd(T joke)
         {
             nodo newNodo = new nodo(joke);
-            if(Head == null)
+            if (Head == null)
             {
                 Head = newNodo;
                 lenght++;
@@ -39,9 +39,9 @@ public class Game_Manager_Control : MonoBehaviour
             else
             {
                 nodo tmp = Head;
-                for(int i = 0; i < lenght; i++)
+                for (int i = 0; i < lenght; i++)
                 {
-                    if(tmp.next != null)
+                    if (tmp.next != null)
                     {
                         tmp = tmp.next;
                     }
@@ -52,7 +52,10 @@ public class Game_Manager_Control : MonoBehaviour
             }
         }
     }
- 
+
+
+    public List<Joke> SelectableJokes;
+
     public void Start()
     {
         DoubleLinkedList<Joke> mylist = new DoubleLinkedList<Joke>();
@@ -63,7 +66,7 @@ public class Game_Manager_Control : MonoBehaviour
         Debug.Log("Telling joke");
         FinishJoke();
     }
-    
+
     public void FinishJoke()
     {
         timer++;
@@ -74,9 +77,32 @@ public class Game_Manager_Control : MonoBehaviour
 
     private void Update()
     {
+        // Verificar cual fue precionado y mandar a procesar
+        for (int i = 0; i < SelectableJokes.Count; i++)
+        {
+            if (SelectableJokes[i].OnPressed)
+            {
+
+                ProcessJokeSelected(SelectableJokes[i]);
+                
+                // desactivar como seleccioando
+                SelectableJokes[i].OnPressed = false;
+            }
+        }
+
+
         if (GenericJoke.value > 0)
         {
             TellJoke();
         }
     }
+
+    void ProcessJokeSelected(Joke joke)
+    {
+
+    }
+
+
+
+
 }
