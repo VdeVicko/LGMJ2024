@@ -14,6 +14,7 @@ using Unity.VisualScripting;
 
 public class Joke : MonoBehaviour
 {
+    GameData gameData;
     public int JokeId;
     public int id;
     public bool OnPressed = false;
@@ -66,13 +67,17 @@ public class Joke : MonoBehaviour
         public void ChangeJokeid(int newjokeid, string newtext)
         {
             id = newjokeid;
-            UpdateJoke();
+         text.text = newtext;
+          
         }
 
         void UpdateJoke()
         {
             MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(+130, 0, 0), ref velocity, 0.1f); ;
             OnPressed = false;
+
+        
+          
         }
     }
 
