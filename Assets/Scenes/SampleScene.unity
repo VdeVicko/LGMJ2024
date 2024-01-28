@@ -383,6 +383,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &657008885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3293461120713963872, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &657008889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657008885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
 --- !u!1001 &693932465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,12 +806,19 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: cf30511077c073a47ac9231f630f55a1, type: 2}
   State: 0
   GenericJoke: {fileID: 1759792418}
+  ComedianRoutine: {fileID: 988366089}
   JokeButtons:
   - {fileID: 1759792418}
   - {fileID: 1174933749}
   - {fileID: 1571861670}
   - {fileID: 2015466486}
-  NPCs: []
+  NPCs:
+  - {fileID: 1900409600}
+  - {fileID: 1027544819}
+  - {fileID: 657008889}
+  - {fileID: 1083895335}
+  - {fileID: 924084609}
+  - {fileID: 1889553630}
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0
@@ -807,6 +834,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &924084605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6411804627563655236, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924084609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924084605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
 --- !u!1 &927148751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1062,8 @@ GameObject:
   - component: {fileID: 988366087}
   - component: {fileID: 988366086}
   - component: {fileID: 988366088}
+  - component: {fileID: 988366090}
+  - component: {fileID: 988366089}
   m_Layer: 0
   m_Name: comediante
   m_TagString: Untagged
@@ -1110,6 +1159,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &988366089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988366085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620b923cc4609eb4382c0844eeb6c121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &988366090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988366085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44142419377a54a888bc02a1d67e01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1027544815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8439620028681342322, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027544819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027544815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
+--- !u!1 &1083895331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5585283099872199094, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083895335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083895331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
 --- !u!1 &1104252110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1269,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcbb769606737941a2fb935ca2eca8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1278169757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278169759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278169757}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
 --- !u!1001 &1280168526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2182,6 +2315,9 @@ PrefabInstance:
     - {fileID: 5500569887801006049, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1278169759}
     - targetCorrespondingSourceObject: {fileID: -7029948723529949830, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1904368538}
@@ -2194,6 +2330,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 163480801079080580, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1900409598}
+    - targetCorrespondingSourceObject: {fileID: -6666660977082890997, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1889553630}
+    - targetCorrespondingSourceObject: {fileID: -5585283099872199094, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1083895335}
+    - targetCorrespondingSourceObject: {fileID: 8439620028681342322, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1027544819}
+    - targetCorrespondingSourceObject: {fileID: -6411804627563655236, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 924084609}
+    - targetCorrespondingSourceObject: {fileID: -3293461120713963872, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 657008889}
   m_SourcePrefab: {fileID: 100100000, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
 --- !u!224 &1759792414 stripped
 RectTransform:
@@ -2211,6 +2362,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcbb769606737941a2fb935ca2eca8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1889553626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6666660977082890997, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
+  m_PrefabInstance: {fileID: 1751986735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1889553630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889553626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bc5a0c88b3bba47a51b52a988ce199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  GM: {fileID: 0}
+  CurrentJokeResponce: 0
 --- !u!1 &1900409594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 163480801079080580, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}
@@ -2278,10 +2449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   GM: {fileID: 758167119}
-  Happiness: 1000
-  ResistanceCount: 4
-  References: []
-  Resistance: 
+  CurrentJokeResponce: 0
 --- !u!1 &1904368534 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: 880736463178fba4db92db17ee2bd3cf, type: 3}

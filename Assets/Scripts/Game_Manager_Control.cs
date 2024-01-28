@@ -13,6 +13,8 @@ public class Game_Manager_Control : MonoBehaviour
     public int State;
     public Joke GenericJoke;
 
+    public Routine ComedianRoutine;
+
     public List<Joke> JokeButtons;
 
     public List<Npc_Controller> NPCs;
@@ -94,17 +96,14 @@ public class Game_Manager_Control : MonoBehaviour
     {
         Debug.Log("Broma elegida: " + jokeButton.GetJokeData().JokeId.ToString());
 
-        //Obtener valores de broma
+        //Obtener valores de broma y Setear nuevos valores en botón
         JokeData currentJokeData = jokeButton.GetJokeData();
-
-        // Setear nuevos valores en botón
         JokeData newJoke = gameData.GetNewRandomJoke();
         jokeButton.SetJokeData(newJoke);
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
 
         // Ejecutar animacion de contar broma
-        TellJoke();
-
+        ComedianRoutine.TellJoke(currentJokeData);
 
         float totalResponce = 0;
         // Procesar broma por el publico
