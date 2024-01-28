@@ -28,6 +28,8 @@ public class Game_Manager_Control : MonoBehaviour
     public Animator ComedianShowResultAnimatior;
     public TMP_Text JokeText;
     public RawImage JokeImage;
+    public GameObject GamePlayUI;
+    public GameObject ResultUI;
 
 
 
@@ -38,7 +40,10 @@ public class Game_Manager_Control : MonoBehaviour
 
     public void Start()
     {
+        GamePlayUI.SetActive(false);
+
         TrantitionInit(cam1, cam2);
+
         Invoke("Initialize", 0.1f);
     }
 
@@ -46,14 +51,29 @@ public class Game_Manager_Control : MonoBehaviour
     {
         SetupNPCs();
 
-        SetupJokeButtons();
-
         ComedianRoutine.MyGM = this;
 
         showTime = DEFAUlT_SHOW_DURATION;
+
+        StartCoroutine(WaitIntroAnimation());
     }
 
+    public IEnumerator WaitIntroAnimation()
+    {
+        yield return new WaitForSeconds(3f);
+        ComedianShowResultAnimatior.SetFloat("showResult", 0);
 
+        GamePlayUI.SetActive(true);
+
+        StartCoroutine(WaitUILoad());
+    }
+
+    public IEnumerator WaitUILoad()
+    {
+        yield return new WaitForSeconds(.1f);
+
+        SetupJokeButtons();
+    }
 
 
 
@@ -172,10 +192,21 @@ public class Game_Manager_Control : MonoBehaviour
 
         if (ComedianShowResultAnimatior)
             ComedianShowResultAnimatior.SetFloat("showResult", showResult);
+
+        StartCoroutine(WaitResultAnimation());
     }
 
 
 
+    public IEnumerator WaitResultAnimation()
+    {
+        yield return new WaitForSeconds(3f);
+        ComedianShowResultAnimatior.SetFloat("showResult", 0);
+
+        GamePlayUI.SetActive(false);
+
+        TrantitionInit(cam2, cam1);
+    }
 
 
 
