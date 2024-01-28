@@ -79,6 +79,3 @@ public class MainPanel : MonoBehaviour
         fxSource.PlayOneShot(clickSound);
     }
 }  
-    
-
-

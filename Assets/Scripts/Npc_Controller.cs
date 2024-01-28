@@ -43,7 +43,6 @@ public class Npc_Controller : MonoBehaviour
 
     void Start()
     {
-
         animator = gameObject.GetComponent<Animator>();
 
         //Resistance = new int[ResistanceCount];
@@ -57,11 +56,8 @@ public class Npc_Controller : MonoBehaviour
 
     public IEnumerator Animations()
     {
-        
-        
-            
-            yield return new WaitForSeconds(3f);
-            animator.SetFloat("Reaction", 0f);
+        yield return new WaitForSeconds(3f);
+        animator.SetFloat("Reaction", 0f);
         StopCoroutine(Animations());
     }
     public void React()
@@ -69,8 +65,6 @@ public class Npc_Controller : MonoBehaviour
         StartCoroutine(Animations());
         currentState = CurrentJokeResponce;
         animator.SetFloat("Reaction", currentState);
-        
-      
     }
 
     public void SetData(NPCData newData)
@@ -86,8 +80,6 @@ public class Npc_Controller : MonoBehaviour
     {
         return data;
     }
-
-
 
     public void ProcessJoke(JokeData jokeData)
     {
@@ -122,5 +114,4 @@ public class Npc_Controller : MonoBehaviour
         Debug.Log(" - participant responce=" + CurrentJokeResponce.ToString() + " happines=" + CurrentHappiness.ToString());
 
     }
-
 }
