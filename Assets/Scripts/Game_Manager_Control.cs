@@ -3,24 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Build;
-using UnityEngine.Assertions.Must;
-using UnityEngine.UIElements;
 using TMPro;
 using Cinemachine;
+using Unity.UI;
+using UnityEngine.UI;
 
 public class Game_Manager_Control : MonoBehaviour
 {
     public float timer = 0;
     public GameData gameData;
     public int State;
+    public Image Image;
 
     //References
     public Routine ComedianRoutine;
     public TMP_Text JokeResponceText;
+    
     public List<Joke> JokeButtons;
     public List<Npc_Controller> NPCs;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
+
+    public Slider JokemeterSlider;
 
     private float jokemeter;
     JokeData currentJokeData;
@@ -44,7 +48,6 @@ public class Game_Manager_Control : MonoBehaviour
     {
         timer++;
         State = 3;
-        //GenericJoke.value = 0;
     }
 
     public void TellJoke()
@@ -61,7 +64,6 @@ public class Game_Manager_Control : MonoBehaviour
         {
             if (JokeButtons[i].OnPressed)
             {
-
                 ProcessSelectedJokeButton(JokeButtons[i]);
 
                 // desactivar como seleccioando
@@ -106,8 +108,6 @@ public class Game_Manager_Control : MonoBehaviour
 
         // Ejecutar animacion de contar broma
         ComedianRoutine.TellJoke(currentJokeData);
-
-
     }
 
     public void ProcessTellJokeCompleted()
@@ -115,7 +115,7 @@ public class Game_Manager_Control : MonoBehaviour
         Debug.Log("ProcessTellJokeCompleted " + currentJokeData.JokeId.ToString());
 
 
-       float totalResponce = 0;
+        float totalResponce = 0;
 
         // Procesar broma por el publico
         foreach (var npc in NPCs)
@@ -130,14 +130,14 @@ public class Game_Manager_Control : MonoBehaviour
         jokemeter += totalResponce;
 
         //Actualizar chistometro
-        JokeResponceText.text = jokemeter.ToString() + "/" + "100";
+        JokeResponceText.text = jokemeter.ToString() + "/ 100";
+        JokemeterSlider.value = jokemeter;
+        Debug.Log(JokemeterSlider.value);
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
 
     public void TrantitionInit(CinemachineVirtualCamera a, CinemachineVirtualCamera b)
     {
-        
         b.Priority = a.Priority + 1;
     }
-
 }
