@@ -118,7 +118,8 @@ public class Npc_Controller : MonoBehaviour
 
     public void ProcessJoke(JokeData jokeData)
     {
-        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor;
+        bool knowReference = jokeData.Reference.Length != 0 ? data.KnowReferences.Contains(jokeData.Reference) : true;  
+        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (knowReference ? 1 : 0) ;
 
         CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
 
