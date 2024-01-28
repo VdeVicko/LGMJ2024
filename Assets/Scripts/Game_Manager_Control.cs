@@ -105,25 +105,20 @@ public class Game_Manager_Control : MonoBehaviour
         // Ejecutar animacion de contar broma
         TellJoke();
 
+
+        float totalResponce = 0;
         // Procesar broma por el publico
         foreach (var npc in NPCs)
         {
-            ProcessJokeByNPC(npc, currentJokeData);
+            npc.ProcessJoke(currentJokeData);
+
+            totalResponce += npc.CurrentJokeResponce;
         }
 
-
-
-
-
+        Debug.Log("Respuesta general: " + totalResponce.ToString());
 
     }
 
-    void ProcessJokeByNPC(Npc_Controller npc, JokeData jokeData)
-    {
-        int jokeHappines = 0;
-
-
-    }
 
 
 

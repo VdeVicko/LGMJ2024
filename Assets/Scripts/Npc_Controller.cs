@@ -7,36 +7,43 @@ using UnityEngine;
 
 public class Npc_Controller : MonoBehaviour
 {
-    public struct JokeResponce
-    {
+    //public struct JokeResponce
+    //{
 
-    } ;
+   // };
 
-    JokeResponce currentJokeResponce;
+    //JokeResponce currentJokeResponce;
 
 
     public Rigidbody rb;
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
 
-    public float Happiness;
-    public int ResistanceCount = 4;
-    float Humor;
-    float ResistBitingHumor;
+    private NPCData data;
+    public float CurrentJokeResponce = 0;
+    private float CurrentHappiness = 0;
+    private int CurrentAcidityResistance = 0;
+    private int[] currentThemeResistances;
 
-    public string[] References;
-    public int[] Resistance;
+
+
+    //float Humor;
+    //float ResistBitingHumor;
+
+    //public string[] References;
+    //public int[] Resistance;
     // Enfermedad, Religion,C,D
 
-    private NPCData data;
 
 
 
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
-        Resistance = new int[ResistanceCount];
+        rb = gameObject.GetComponent<Rigidbody>(); 
+
+
+        //Resistance = new int[ResistanceCount];
     }
     private void Update()
     {
@@ -96,10 +103,25 @@ public class Npc_Controller : MonoBehaviour
     public void SetData(NPCData newData)
     {
         data = newData;
+
+        CurrentAcidityResistance = data.AcidityResistance;
+
+        currentThemeResistances = data.ThemeRecistance;
     }
 
     public NPCData GetData()
     {
         return data;
     }
+
+
+
+    public void ProcessJoke(JokeData jokeData)
+    {
+        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor;
+
+        CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
+
+    }
+
 }

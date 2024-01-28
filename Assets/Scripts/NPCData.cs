@@ -4,6 +4,8 @@ using UnityEngine;
 
 public struct NPCData
 {
+    const int THEME_QUANTITY = 8;
+
     public int Id;
 
     public int GeneralHumor;
