@@ -128,6 +128,7 @@ public class Game_Manager_Control : MonoBehaviour
 
         jokemeter += totalResponce;
 
+        //Actualizar chistometro
         JokeResponceText.text = jokemeter.ToString() + "/" + "100";
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
