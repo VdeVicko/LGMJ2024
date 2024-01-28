@@ -16,7 +16,7 @@ public class Joke : MonoBehaviour
     GameData gameData;
 
     int i = 0;
-    bool moving = false;
+    public bool moving = false;
     public int id;
 
     public bool OnPressed = false;
@@ -77,7 +77,7 @@ public class Joke : MonoBehaviour
         data = newData;
         //id = newjokeid;
         text.text = data.Text.Substring(0, 60);
-        moving = true;
+      
     }
 
     public JokeData GetJokeData()
