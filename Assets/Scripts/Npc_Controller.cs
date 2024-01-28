@@ -28,7 +28,7 @@ public class Npc_Controller : MonoBehaviour
 
     private NPCData data;
     public float CurrentJokeResponce = 0;
-    private float CurrentHappiness = 0;
+    public float CurrentHappiness = 0;
     private float CurrentAcidityResistance = 0;
     private int[] currentThemeResistances;
     public float currentState;

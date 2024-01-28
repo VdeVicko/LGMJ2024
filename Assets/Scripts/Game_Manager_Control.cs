@@ -31,12 +31,22 @@ public class Game_Manager_Control : MonoBehaviour
     public GameObject GamePlayUI;
     public GameObject ResultUI;
 
+    public TMP_Text ResultShow;
+    public TMP_Text ResultHaters;
+    public TMP_Text ResultLovers;
+
 
 
     private float jokemeter;
     JokeData currentJokeData;
     private float showTime;
-    private float showResult;
+
+
+    private float showResult = 0;
+    private float hatters = 0;
+    private float lovers = 0;
+
+
 
     public void Start()
     {
@@ -151,6 +161,7 @@ public class Game_Manager_Control : MonoBehaviour
             npc.React();
 
             totalResponce += npc.CurrentJokeResponce;
+            
         }
 
         float averageResponce = totalResponce * AVERAGE_RESPONCE_MULTIPLIER / NPCs.Count;
@@ -192,6 +203,12 @@ public class Game_Manager_Control : MonoBehaviour
 
         if (ComedianShowResultAnimatior)
             ComedianShowResultAnimatior.SetFloat("showResult", showResult);
+
+        foreach(var npc  in NPCs)
+        {
+            if (npc.CurrentHappiness < 0) hatters++;
+            if (npc.CurrentHappiness > 0) lovers++;
+        }
 
         StartCoroutine(WaitResultAnimation());
     }
