@@ -4,7 +4,6 @@ using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Compilation;
 using UnityEngine;
 
 public class Npc_Controller : MonoBehaviour

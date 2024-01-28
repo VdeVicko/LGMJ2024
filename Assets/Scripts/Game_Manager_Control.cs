@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Build;
 using TMPro;
 using Cinemachine;
-using Unity.UI;
 using UnityEngine.UI;
 
 public class Game_Manager_Control : MonoBehaviour
