@@ -88,10 +88,10 @@ public class Game_Manager_Control : MonoBehaviour
 
         SetupJokeButtons();
 
-        //InvokeRepeating("TimeTick", 0f, 1);
+        TextTime.text = ((int)showTime).ToString() + " min";
 
     }
-    
+
 
 
 
@@ -188,7 +188,7 @@ public class Game_Manager_Control : MonoBehaviour
 
         showTime = Math.Clamp(showTime, 0, 10000);
 
-        TextTime.text = showTime.ToString() + " min";
+        TextTime.text = ((int)showTime).ToString() + " min";
 
         Debug.Log(showTime);
         // Evaluar si terminóel show
@@ -223,6 +223,14 @@ public class Game_Manager_Control : MonoBehaviour
             if (npc.CurrentHappiness < 0) hatters++;
             if (npc.CurrentHappiness > 0) lovers++;
         }
+
+
+
+
+        ResultShow.text = showResult < 0 ? "Pesima actuación" : (showResult > 1 ? "Exito abrumador" : "Comediante promedio") ;
+        ResultHaters.text = "+ " + hatters.ToString();
+        ResultLovers.text = "+ " + lovers.ToString();
+
 
         StartCoroutine(WaitResultAnimation());
     }
