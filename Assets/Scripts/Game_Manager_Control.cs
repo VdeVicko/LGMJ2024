@@ -20,6 +20,7 @@ public class Game_Manager_Control : MonoBehaviour
     public List<Npc_Controller> NPCs;
 
     private float jokemeter;
+    JokeData currentJokeData;
 
     public void Start()
     {
@@ -31,6 +32,8 @@ public class Game_Manager_Control : MonoBehaviour
         SetupNPCs();
 
         SetupJokeButtons();
+
+        ComedianRoutine.MyGM = this;
     }
 
     public void FinishJoke()
@@ -91,7 +94,7 @@ public class Game_Manager_Control : MonoBehaviour
         Debug.Log("Broma elegida: " + jokeButton.GetJokeData().JokeId.ToString());
 
         //Obtener valores de broma y Setear nuevos valores en botón
-        JokeData currentJokeData = jokeButton.GetJokeData();
+        currentJokeData = jokeButton.GetJokeData();
         JokeData newJoke = gameData.GetNewRandomJoke();
         jokeButton.SetJokeData(newJoke);
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
@@ -99,7 +102,13 @@ public class Game_Manager_Control : MonoBehaviour
         // Ejecutar animacion de contar broma
         ComedianRoutine.TellJoke(currentJokeData);
 
+
+    }
+
+    public void ProcessTellJokeCompleted()
+    {
         float totalResponce = 0;
+
         // Procesar broma por el publico
         foreach (var npc in NPCs)
         {
@@ -115,4 +124,6 @@ public class Game_Manager_Control : MonoBehaviour
         JokeResponceText.text = jokemeter.ToString() + "/" + "100";
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
+
+
 }
