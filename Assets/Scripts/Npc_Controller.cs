@@ -106,7 +106,7 @@ public class Npc_Controller : MonoBehaviour
 
         CurrentAcidityResistance = data.AcidityResistance;
 
-        currentThemeResistances = data.ThemeRecistance;
+        currentThemeResistances = (int[])data.ThemeRecistance.Clone();
     }
 
     public NPCData GetData()
@@ -125,25 +125,24 @@ public class Npc_Controller : MonoBehaviour
         bool knowReference = jokeData.Reference.Length != 0 ? references.Contains(jokeData.Reference) : true;
 
         float themeResistance = 0;
-        
+
         if (jokeData.ThemeId < currentThemeResistances.Length)
         {
-            themeResistance = currentThemeResistances[jokeData.ThemeId];
-             
+            themeResistance = currentThemeResistances[jokeData.ThemeId] > 0 ? 1 : (currentThemeResistances[jokeData.ThemeId] < 0 ? -1 : 0);
+
             currentThemeResistances[jokeData.ThemeId]--;
         }
 
 
-        float acidityResistance = CurrentAcidityResistance > jokeData.Acidity ? 1 : (CurrentAcidityResistance < jokeData.Acidity ? -1 : 0); 
-        
+        float acidityResistance = CurrentAcidityResistance > jokeData.Acidity ? 1 : (CurrentAcidityResistance < jokeData.Acidity ? -1 : 0);
+
         CurrentAcidityResistance -= jokeData.Acidity;
 
         int resistanceSig = themeResistance < 0 && acidityResistance < 0 ? -1 : 1;
 
 
-
         CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (knowReference ? 1 : 0) * themeResistance * acidityResistance * resistanceSig;
-
+        Debug.Log(jokeData.Funny.ToString() + "*" + data.GeneralHumor.ToString() + "*(" + (knowReference ? "1" : "0") + ")*" + themeResistance.ToString() + "*" + acidityResistance.ToString() + "*" + resistanceSig.ToString());
 
         CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
 

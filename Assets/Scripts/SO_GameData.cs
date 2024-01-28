@@ -46,7 +46,7 @@ public class GameData : ScriptableObject
             4,
             "tema",
             1,
-            "referencia"),
+            ""),
         new (2,
             "Alzhimer",
             "Fui al médico el otro día porque estaba teniendo problemas de memoria. Le pregunto al doctor, '¿Quién es ese hombre alemán que me hace olvidar las cosas?' Y el doctor, sin perder el ritmo, me dice 'Alzheimer'. Yo pensé, 'Vaya, debe ser un tipo famoso, porque no hay día que no se me olvide su nombre.",
