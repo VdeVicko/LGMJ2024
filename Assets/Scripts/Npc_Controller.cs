@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System;
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -26,7 +27,7 @@ public class Npc_Controller : MonoBehaviour
     private float CurrentHappiness = 0;
     private float CurrentAcidityResistance = 0;
     private int[] currentThemeResistances;
-
+    public float currentState;
 
 
     //float Humor;
@@ -42,64 +43,34 @@ public class Npc_Controller : MonoBehaviour
 
     void Start()
     {
-       
 
+        animator = gameObject.GetComponent<Animator>();
 
         //Resistance = new int[ResistanceCount];
     }
     private void Update()
     {
-        
-            Reaction(CurrentJokeResponce);
+       
+            
         
     }
 
-    public IEnumerator LaughJumps()
-    {
-        while(true)
-        {
-            Laugh();
-            yield return new WaitForSeconds(1.5f);
-        }
-    }
-    void Reaction(float reaction)
+    public IEnumerator Animations()
     {
         
-        Debug.Log("Pipo React :O");
-      if(reaction == 0)
-        {
-            Idle();
-        }
-      else if(reaction > 0)
-        {
-            Laugh();
-        }
-      else
-        {
-            Complain();
-        }
-        GM.State = 0;
+        
+            
+            yield return new WaitForSeconds(3f);
+            animator.SetFloat("Reaction", 0f);
+        StopCoroutine(Animations());
     }
-
-    void LaughHarder()
+    public void React()
     {
-        animator.SetInteger("Reaction", 3);
-        sprite.color = Color.cyan;
-    }
-    void Laugh()
-    {
-        animator.SetInteger("Reaction", 2);
-     
-    }
-
-    void Complain()
-    {
-        animator.SetInteger("Reaction", 1);
-    }
-
-    void Idle()
-    {
-        animator.SetInteger("Reaction", 0);
+        StartCoroutine(Animations());
+        currentState = CurrentJokeResponce;
+        animator.SetFloat("Reaction", currentState);
+        
+      
     }
 
     public void SetData(NPCData newData)

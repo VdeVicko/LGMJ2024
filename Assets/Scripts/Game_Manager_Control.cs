@@ -121,6 +121,7 @@ public class Game_Manager_Control : MonoBehaviour
         foreach (var npc in NPCs)
         {
             npc.ProcessJoke(currentJokeData);
+            npc.React();
 
             totalResponce += npc.CurrentJokeResponce;
         }
