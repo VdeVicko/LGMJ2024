@@ -31,8 +31,6 @@ public class Joke : MonoBehaviour
 
     private JokeData data;
 
-    public static event Action Joking;
-
     //public int JokeId;
     //float duration;
     //float bitingHumor;
