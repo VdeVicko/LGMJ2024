@@ -22,7 +22,7 @@ public class Npc_Controller : MonoBehaviour
     private NPCData data;
     public float CurrentJokeResponce = 0;
     private float CurrentHappiness = 0;
-    private int CurrentAcidityResistance = 0;
+    private float CurrentAcidityResistance = 0;
     private int[] currentThemeResistances;
 
 
@@ -118,8 +118,25 @@ public class Npc_Controller : MonoBehaviour
 
     public void ProcessJoke(JokeData jokeData)
     {
-        bool knowReference = jokeData.Reference.Length != 0 ? data.KnowReferences.Contains(jokeData.Reference) : true;  
-        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (knowReference ? 1 : 0) ;
+        bool knowReference = jokeData.Reference.Length != 0 ? data.KnowReferences.Contains(jokeData.Reference) : true;
+
+        float themeResistance = 0;
+        
+        if (jokeData.ThemeId < currentThemeResistances.Length)
+        {
+            themeResistance = currentThemeResistances[jokeData.ThemeId];
+             
+            currentThemeResistances[jokeData.ThemeId]--;
+        }
+
+
+        float acidityResistance = CurrentAcidityResistance > jokeData.Acidity ? 1 : (CurrentAcidityResistance < jokeData.Acidity ? -1 : 0); 
+        
+        CurrentAcidityResistance -= jokeData.Acidity;
+
+        
+        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (knowReference ? 1 : 0) * themeResistance * acidityResistance;
+
 
         CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
 

@@ -13,6 +13,7 @@ public struct JokeData
     public float Funny;
     public float Acidity;
     public string Theme;
+    public int ThemeId;
     public string Reference;
 
 
@@ -24,18 +25,18 @@ public struct JokeData
         float funny,
         float acidity,
         string theme,
+        int themeId,
         string reference 
         )
     {
         JokeId = jokeId;
-
         Title = title;
         Text = text;
-
         Duration = duration;
         Funny = funny;
         Acidity = acidity;
         Theme = theme;
+        ThemeId = themeId;
         Reference = reference;
     }
 }
