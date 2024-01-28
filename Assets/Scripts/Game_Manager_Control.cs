@@ -26,6 +26,9 @@ public class Game_Manager_Control : MonoBehaviour
     public CinemachineVirtualCamera cam2;
     public Slider JokemeterSlider;
     public Animator ComedianShowResultAnimatior;
+    public TMP_Text JokeText;
+    public RawImage JokeImage;
+
 
 
     private float jokemeter;
@@ -105,7 +108,10 @@ public class Game_Manager_Control : MonoBehaviour
         jokeButton.moving = true;
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
 
-        // Ejecutar animacion de contar broma
+        // Ejecutar animacion de contar .
+        JokeText.text = currentJokeData.Text;
+        JokeText.enabled = true;
+        JokeImage.enabled = true;
         ComedianRoutine.TellJoke(currentJokeData);
     }
 
@@ -113,6 +119,8 @@ public class Game_Manager_Control : MonoBehaviour
     {
         Debug.Log("ProcessTellJokeCompleted " + currentJokeData.JokeId.ToString());
 
+        JokeText.enabled = false;
+        JokeImage.enabled = false;
 
         float totalResponce = 0;
 
