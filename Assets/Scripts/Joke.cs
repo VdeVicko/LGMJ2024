@@ -29,6 +29,7 @@ public class Joke : MonoBehaviour
     public TMP_Text txtTheme;
     public TMP_Text txtDuration;
     public TMP_Text txtAcidity;
+    public AudioSource audioClic;
 
 
 
@@ -77,6 +78,7 @@ public class Joke : MonoBehaviour
     {
         value = 1;
         OnPressed = true;
+        audioClic.Play();
     }
 
     public void SetJokeData(JokeData newData)

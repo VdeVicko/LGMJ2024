@@ -21,6 +21,10 @@ public class Npc_Controller : MonoBehaviour
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
     public Animator animator;
+    public AudioSource audioS;
+    public AudioClip goodResponce;
+    public AudioClip badResponce;
+
 
     private NPCData data;
     public float CurrentJokeResponce = 0;
@@ -112,6 +116,13 @@ public class Npc_Controller : MonoBehaviour
         CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
 
         Debug.Log(" - participant responce=" + CurrentJokeResponce.ToString() + " happines=" + CurrentHappiness.ToString());
+
+
+        //playaudio
+        if (CurrentJokeResponce > 0)
+            audioS.PlayOneShot(goodResponce);
+        else if (CurrentJokeResponce < 0)
+            audioS.PlayOneShot(badResponce);
 
     }
 }
