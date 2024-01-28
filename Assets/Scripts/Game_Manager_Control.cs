@@ -51,6 +51,8 @@ public class Game_Manager_Control : MonoBehaviour
     public void Start()
     {
         GamePlayUI.SetActive(false);
+        ResultUI.SetActive(false);
+
 
         TrantitionInit(cam1, cam2);
 
@@ -74,6 +76,7 @@ public class Game_Manager_Control : MonoBehaviour
         ComedianShowResultAnimatior.SetFloat("showResult", 0);
 
         GamePlayUI.SetActive(true);
+
 
         StartCoroutine(WaitUILoad());
     }
