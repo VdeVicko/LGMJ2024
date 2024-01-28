@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Compilation;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class Npc_Controller : MonoBehaviour
     
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
+    public Animator animator;
 
     private NPCData data;
     public float CurrentJokeResponce = 0;
@@ -47,10 +49,9 @@ public class Npc_Controller : MonoBehaviour
     }
     private void Update()
     {
-        if(GM.State == 3)
-        {
-            Reaction();
-        }
+        
+            Reaction(CurrentJokeResponce);
+        
     }
 
     public IEnumerator LaughJumps()
@@ -61,43 +62,44 @@ public class Npc_Controller : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
     }
-    void Reaction()
+    void Reaction(float reaction)
     {
-        int reaction = 2;
+        
         Debug.Log("Pipo React :O");
-        switch(reaction)
+      if(reaction == 0)
         {
-            case 1:
-                Idle();
-                break;
-            case 2:
-            
-                Laugh();
-                break;
-            case 3:
-                Complain();
-                break;
-            default:
-                Debug.Log("Error");
-                break;
-
+            Idle();
+        }
+      else if(reaction > 0)
+        {
+            Laugh();
+        }
+      else
+        {
+            Complain();
         }
         GM.State = 0;
     }
 
+    void LaughHarder()
+    {
+        animator.SetInteger("Reaction", 3);
+        sprite.color = Color.cyan;
+    }
     void Laugh()
     {
-      //  rb.AddForce(transform.up * Happiness,ForceMode.Impulse);
+        animator.SetInteger("Reaction", 2);
+     
     }
 
     void Complain()
     {
-
+        animator.SetInteger("Reaction", 1);
     }
 
     void Idle()
     {
-
+        animator.SetInteger("Reaction", 0);
     }
 
     public void SetData(NPCData newData)
