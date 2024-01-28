@@ -131,10 +131,11 @@ public class Game_Manager_Control : MonoBehaviour
 
         //Actualizar chistometro
         JokeResponceText.text = jokemeter.ToString() + "/ 100";
-        JokemeterSlider.value = jokemeter;
-        Debug.Log(JokemeterSlider.value);
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
-    }
+        float adjustedJokemeter = jokemeter / 2;
+        JokemeterSlider.value = jokemeter;
+
+   }
 
     public void TrantitionInit(CinemachineVirtualCamera a, CinemachineVirtualCamera b)
     {

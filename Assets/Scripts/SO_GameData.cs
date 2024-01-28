@@ -67,19 +67,19 @@ new(21,"Chiste 21","Ahora todo el mundo está obsesionado con los autos eléctrico
 
     NPCData[] npcDB = new NPCData[]
     {
-new(1,5,8, new int[]{2,2,2,3,1,0,1,1}, new string[]{}),
-new(2,3,9, new int[]{1,3,2,2,1,1,2,1}, new string[]{"Alzheimer"}),
-new(3,4,7, new int[]{2,3,3,4,0,0,1,1}, new string[]{"Oncologo"}),
-new(4,6,10,new int[]{1,2,2,3,2,0,0,1}, new string[]{}),
-new(5,2,7, new int[]{0,3,3,1,0,1,2,1}, new string[]{"Partículas"}),
-new(6,1,5, new int[]{1,2,2,2,1,0,1,1}, new string[]{}),
-new(7,3,4, new int[]{1,2,0,0,1,0,2,1}, new string[]{"Partículas", "Oncologo"}),
-new(8,5,6, new int[]{1,1,4,4,1,1,1,1}, new string[]{}),
-new(9,3,10,new int[]{1,1,2,2,0,1,1,1}, new string[]{}),
-new(10,1,2,new int[]{0,4,1,1,1,0,0,0}, new string[]{"Partículas"}),
-new(11,2,4,new int[]{0,1,1,0,0,0,1,0}, new string[]{"Alzheimer"}),
-new(12,4,8,new int[]{3,1,4,3,2,0,3,3}, new string[]{}),
-new(13,3,4,new int[]{2,1,2,2,4,1,2,2}, new string[]{}),
-new(14,2,2,new int[]{1,2,2,3,4,1,2,1}, new string[]{})
+new(1,0.5f,8,new int[]{2,2,2,3,1,0,1,1}, new string[]{}),
+new(2,0.3f,9,new int[]{1,3,2,2,1,1,2,1}, new string[]{"Alzheimer"}),
+new(3,0.4f,7,new int[]{2,3,3,4,0,0,1,1}, new string[]{"Oncologo"}),
+new(4,0.6f,10,new int[]{1,2,2,3,2,0,0,1}, new string[]{}),
+new(5,0.2f,7,new int[]{0,3,3,1,0,1,2,1}, new string[]{"Partículas"}),
+new(6,0.1f,5,new int[]{1,2,2,2,1,0,1,1}, new string[]{}),
+new(7,0.3f,4,new int[]{1,2,0,0,1,0,2,1}, new string[]{"Partículas", "Oncologo"}),
+new(8,0.5f,6,new int[]{1,1,4,4,1,1,1,1}, new string[]{}),
+new(9,0.3f,10,new int[]{1,1,2,2,0,1,1,1}, new string[]{}),
+new(10,0.1f,2,new int[]{0,4,1,1,1,0,0,0}, new string[]{"Partículas"}),
+new(11,0.2f,4,new int[]{0,1,1,0,0,0,1,0}, new string[]{"Alzheimer"}),
+new(12,0.4f,8,new int[]{3,1,4,3,2,0,3,3}, new string[]{}),
+new(13,0.3f,4,new int[]{2,1,2,2,4,1,2,2}, new string[]{}),
+new(14,0.2f,2,new int[]{1,2,2,3,4,1,2,1}, new string[]{})
     };
 }
