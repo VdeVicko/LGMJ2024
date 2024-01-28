@@ -22,7 +22,6 @@ public class Routine : MonoBehaviour
     public void TellJoke(JokeData jokedata)
     {
         //duration = jokedata.duration;
-        animator.SetBool("tellingjoke",true);
-
+        animator.SetBool("tellingjoke", true);
     }
 }
