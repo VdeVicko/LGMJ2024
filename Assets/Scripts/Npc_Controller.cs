@@ -122,7 +122,7 @@ public class Npc_Controller : MonoBehaviour
 
         List<string> references = new List<string>(data.KnowReferences);
 
-        bool knowReference = jokeData.Reference.Length != 0 ? references.Contains(jokeData.Reference) : true;
+        bool unknowReference = jokeData.Reference.Length == 0 ? true : references.Contains(jokeData.Reference);
 
         float themeResistance = 0;
 
@@ -141,8 +141,8 @@ public class Npc_Controller : MonoBehaviour
         int resistanceSig = themeResistance < 0 && acidityResistance < 0 ? -1 : 1;
 
 
-        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (knowReference ? 1 : 0) * themeResistance * acidityResistance * resistanceSig;
-        Debug.Log(jokeData.Funny.ToString() + "*" + data.GeneralHumor.ToString() + "*(" + (knowReference ? "1" : "0") + ")*" + themeResistance.ToString() + "*" + acidityResistance.ToString() + "*" + resistanceSig.ToString());
+        CurrentJokeResponce = (float)jokeData.Funny * data.GeneralHumor * (unknowReference ? 0 : 1) * themeResistance * acidityResistance * resistanceSig;
+        Debug.Log(jokeData.Funny.ToString() + "*" + data.GeneralHumor.ToString() + "*(" + (unknowReference ? "0" : "1") + ")*" + themeResistance.ToString() + "*" + acidityResistance.ToString() + "*" + resistanceSig.ToString());
 
         CurrentHappiness += CurrentJokeResponce > 0 ? 1 : (CurrentJokeResponce < 0 ? -1 : 0);
 
