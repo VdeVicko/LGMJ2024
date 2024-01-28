@@ -16,7 +16,7 @@ public class Joke : MonoBehaviour
     GameData gameData;
 
     int i = 0;
-    bool moving;
+    bool moving = false;
     public int id;
 
     public bool OnPressed = false;
@@ -54,7 +54,7 @@ public class Joke : MonoBehaviour
 
     public void Update()
     {
-       /* if (OnPressed)
+        if (moving)
         { 
             
             MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
@@ -63,8 +63,8 @@ public class Joke : MonoBehaviour
 
         if (MyRT.anchoredPosition3D.x > 304f)
         {
-            Invoke("UpdateJoke", 2f);
-        } */
+            UpdateJoke(id);
+        } 
     }
     public void Interaction()
     {
@@ -77,6 +77,7 @@ public class Joke : MonoBehaviour
         data = newData;
         //id = newjokeid;
         text.text = data.Text.Substring(0, 60);
+        moving = true;
     }
 
     public JokeData GetJokeData()
@@ -84,22 +85,23 @@ public class Joke : MonoBehaviour
         return data;
     }
 
-    void UpdateJoke()
+    void UpdateJoke(int id)
     {
+        moving = false;
         //  MyRT.position = Vector3.SmoothDamp(MyRT.anchoredPosition3D, ButtonPoint., ref velocity, 0.1f); ;
         switch (id)
         {
             case 0:
-                MyRT.position = new Vector3(-96.59f, 175.5356f,0);
+                MyRT.anchoredPosition3D = new Vector3(-96.59f, 175.5356f,0);
                 break;
             case 1:
-                MyRT.position = new Vector3(-97.37094f, 67.18599f,0);
+                MyRT.anchoredPosition3D = new Vector3(-97.37094f, 67.18599f,0);
                 break;
             case 2:
-                MyRT.position = new Vector3(-96.59201f, -48.88022f,0);
+                MyRT.anchoredPosition3D = new Vector3(-96.59201f, -48.88022f,0);
                 break;
             case 3:
-                MyRT.position = new Vector3(-95.81305f, -155.5988f,0);
+                MyRT.anchoredPosition3D = new Vector3(-95.81305f, -155.5988f,0);
                 break;
         }
     }
