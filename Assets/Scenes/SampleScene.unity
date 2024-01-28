@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.2, y: 185.2}
+  m_AnchoredPosition: {x: -70.2, y: 162}
   m_SizeDelta: {x: 165.882, y: 39.8564}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142528590
@@ -2109,7 +2109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0576818, y: -0.013972597, z: -0.000807388, w: 0.99823695}
+  m_LocalRotation: {x: -0.057681818, y: -0.013972563, z: -0.0008073863, w: 0.99823695}
   m_LocalPosition: {x: 0.07, y: -3.9599998, z: -19.64}
   m_LocalScale: {x: 1, y: 1, z: 1.9069}
   m_ConstrainProportionsScale: 0
@@ -2465,7 +2465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.24000001}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.6, y: 38.6}
+  m_AnchoredPosition: {x: 35.7, y: -14.999981}
   m_SizeDelta: {x: 132.5389, y: 22.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015814901
@@ -2694,7 +2694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.24000001}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90.5, y: 38.6}
+  m_AnchoredPosition: {x: -90.5, y: 31.000008}
   m_SizeDelta: {x: 132.5389, y: 22.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086533769
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Critic:'
+  m_text: 'Haters ganados:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39452ef5fd599524fa385cd157bfd1e7, type: 2}
   m_sharedMaterial: {fileID: 8052642685421916553, guid: 39452ef5fd599524fa385cd157bfd1e7, type: 2}
@@ -2973,7 +2973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.24000001}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108, y: -86.4}
+  m_AnchoredPosition: {x: 71.4, y: -145.99998}
   m_SizeDelta: {x: 205, y: 29.0088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179392026
@@ -3926,7 +3926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.24000001}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.199966, y: -86.4}
+  m_AnchoredPosition: {x: -58.199966, y: -99.200005}
   m_SizeDelta: {x: 205, y: 29.0088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668843616
@@ -3949,7 +3949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Popularity:'
+  m_text: 'Seguidores ganados: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39452ef5fd599524fa385cd157bfd1e7, type: 2}
   m_sharedMaterial: {fileID: 8052642685421916553, guid: 39452ef5fd599524fa385cd157bfd1e7, type: 2}
@@ -5560,7 +5560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100254440}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0576818, y: -0.013972597, z: -0.000807388, w: 0.99823695}
+  m_LocalRotation: {x: -0.057681818, y: -0.013972563, z: -0.0008073863, w: 0.99823695}
   m_LocalPosition: {x: 0.07, y: -3.9599998, z: -19.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
