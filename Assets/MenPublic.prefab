@@ -102,7 +102,7 @@ MonoBehaviour:
   GM: {fileID: 0}
   animator: {fileID: 0}
   audioS: {fileID: 4684725856397966831}
-  goodResponce: {fileID: 8300000, guid: e6e1e8e6d14047845946a9235895dd2d, type: 3}
+  goodResponce: {fileID: 8300000, guid: ab94df90354b9a24fa62006920ee3c92, type: 3}
   badResponce: {fileID: 8300000, guid: d8c8a75960c222345b121d26343d1d07, type: 3}
   CurrentJokeResponce: 0
   currentState: 0

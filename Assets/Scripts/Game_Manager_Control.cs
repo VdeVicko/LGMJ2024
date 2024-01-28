@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class Game_Manager_Control : MonoBehaviour
 {
     const float AVERAGE_RESPONCE_MULTIPLIER = 2.5f;
-    const float DEFAUlT_SHOW_DURATION = 30;
+    const float DEFAUlT_SHOW_DURATION = 20;
     public float timer = 0;
     public GameData gameData;
     public int State;
@@ -139,7 +139,7 @@ public class Game_Manager_Control : MonoBehaviour
         showTime -= currentJokeData.Duration;
         Debug.Log(showTime);
         // Evaluar si terminóel show
-        if (showTime <= 0.1 || jokemeter <= -100)
+        if (showTime <= 0.1f || jokemeter <= -100)
         {
             FinishShow();
         }
@@ -147,6 +147,7 @@ public class Game_Manager_Control : MonoBehaviour
 
     void FinishShow()
     {
+        Debug.Log("FinishShow");
 
         if (jokemeter < 0)
         {

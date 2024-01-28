@@ -9,6 +9,8 @@ public class Routine : MonoBehaviour
     float duration;
     bool startjoke;
     public Game_Manager_Control MyGM;
+    public AudioSource audioS;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class Routine : MonoBehaviour
         startjoke = true;
         duration = jokedata.Duration;
         animator.SetBool("tellingJoke", true);
+        audioS.Play();
         StartCoroutine(JokeTime(duration));
         StopCoroutine(JokeTime(duration));
     }
@@ -45,7 +48,8 @@ public class Routine : MonoBehaviour
         yield return new WaitForSeconds(duration);
         animator.SetBool("PunchLine", false);
         MyGM.ProcessTellJokeCompleted();
-       
+        audioS.Stop();
+
     }
 
     public void FinishRoutine()
