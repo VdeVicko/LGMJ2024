@@ -5,9 +5,7 @@ using UnityEngine;
 public class Routine : MonoBehaviour
 {
     Animator animator;
-    bool tellingJoke;
     float duration;
-
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +22,7 @@ public class Routine : MonoBehaviour
     void TellJoke(JokeData jokedata)
     {
         //duration = jokedata.duration;
-        tellingJoke = true;
+        animator.SetBool("tellingjoke",true);
+
     }
 }
