@@ -12,16 +12,14 @@ public class Game_Manager_Control : MonoBehaviour
     public float timer = 0;
     public GameData gameData;
     public int State;
-    public Joke GenericJoke;
 
+    //References
     public Routine ComedianRoutine;
     public TMP_Text JokeResponceText;
-
     public List<Joke> JokeButtons;
-
     public List<Npc_Controller> NPCs;
 
-
+    private float jokemeter;
 
     public void Start()
     {
@@ -118,9 +116,12 @@ public class Game_Manager_Control : MonoBehaviour
             totalResponce += npc.CurrentJokeResponce;
         }
 
-        JokeResponceText.text = totalResponce.ToString() + "/" + "100";
-        Debug.Log("Respuesta general: " + totalResponce.ToString());
+        Debug.Log("Respuesta general actual: " + totalResponce.ToString());
 
+        jokemeter += totalResponce;
+
+        JokeResponceText.text = jokemeter.ToString() + "/" + "100";
+        Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
 
 
