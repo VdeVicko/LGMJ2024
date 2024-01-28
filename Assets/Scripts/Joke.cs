@@ -9,25 +9,29 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 using Unity.VisualScripting;
+using System;
 
 
 
 public class Joke : MonoBehaviour
 {
+    GameData gameData;
+
     int i = 0;
     bool moving;
-    GameData gameData;
     public int id;
+
     public bool OnPressed = false;
     private Vector3 velocity = Vector3.zero;
     private RectTransform MyRT;
     public int value = 0;
+
     private TMP_Text text;
     public GameObject ButtonPoint;
 
-
     private JokeData data;
 
+    public static event Action Joking;
 
     //public int JokeId;
     //float duration;
@@ -74,6 +78,7 @@ public class Joke : MonoBehaviour
     {
         value = 1;
         OnPressed = true;
+
     }
 
     public void SetJokeData(JokeData newData)
