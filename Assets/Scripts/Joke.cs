@@ -48,7 +48,8 @@ public class Joke : MonoBehaviour
     public void Start()
     {
 
-        Invoke("SetupCanvas", 0.2f);
+        MyRT = GetComponent<RectTransform>();
+        text = GetComponentInChildren<TMP_Text>();
     }
 
     public void Update()
