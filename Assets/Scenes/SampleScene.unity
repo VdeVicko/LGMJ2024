@@ -1143,6 +1143,7 @@ MonoBehaviour:
   cam1: {fileID: 2100254441}
   cam2: {fileID: 1419069387}
   JokemeterSlider: {fileID: 71953546}
+  ComedianShowResultAnimatior: {fileID: 0}
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0

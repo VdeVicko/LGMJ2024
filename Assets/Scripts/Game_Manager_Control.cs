@@ -137,7 +137,7 @@ public class Game_Manager_Control : MonoBehaviour
 
         // Reducir tiempo
         showTime -= currentJokeData.Duration;
-
+        Debug.Log(showTime);
         // Evaluar si terminóel show
         if (showTime <= 0.1 || jokemeter <= -100)
         {
@@ -147,6 +147,7 @@ public class Game_Manager_Control : MonoBehaviour
 
     void FinishShow()
     {
+
         if (jokemeter < 0)
         {
             showResult = -1;

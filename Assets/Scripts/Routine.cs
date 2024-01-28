@@ -47,4 +47,9 @@ public class Routine : MonoBehaviour
         MyGM.ProcessTellJokeCompleted();
        
     }
+
+    public void FinishRoutine()
+    {
+        
+    }
 }
