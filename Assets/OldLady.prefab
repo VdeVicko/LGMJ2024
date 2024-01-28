@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f71d105f78f7d346a457e87f5ab17d6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.41568628, g: 0.38431373, b: 0.38431373, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   goodResponce: {fileID: 8300000, guid: 66a4dc9d33c694443a769d6bd7d06b2b, type: 3}
   badResponce: {fileID: 8300000, guid: d8c8a75960c222345b121d26343d1d07, type: 3}
   CurrentJokeResponce: 0
+  CurrentHappiness: 0
   currentState: 0
 --- !u!82 &8024450099374627226
 AudioSource:
