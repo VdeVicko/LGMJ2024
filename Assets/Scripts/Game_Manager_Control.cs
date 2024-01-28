@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor.Build;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class Game_Manager_Control : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class Game_Manager_Control : MonoBehaviour
     public Joke GenericJoke;
 
     public Routine ComedianRoutine;
+    public TMP_Text JokeResponceText;
 
     public List<Joke> JokeButtons;
 
     public List<Npc_Controller> NPCs;
+
+
 
     public void Start()
     {
@@ -114,6 +118,7 @@ public class Game_Manager_Control : MonoBehaviour
             totalResponce += npc.CurrentJokeResponce;
         }
 
+        JokeResponceText.text = totalResponce.ToString() + "/" + "100";
         Debug.Log("Respuesta general: " + totalResponce.ToString());
 
     }
