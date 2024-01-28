@@ -17,13 +17,15 @@ public class GameData : ScriptableObject
 
     public NPCData[] GetNPCDataByLevel(int levelId)
     {
-        NPCData[] data = new NPCData[5];
+        NPCData[] data = new NPCData[6]; 
 
         data[0] = npcDB[0];
         data[1] = npcDB[0];
         data[2] = npcDB[0];
         data[3] = npcDB[0];
         data[4] = npcDB[0];
+        data[5] = npcDB[0];
+
 
         return data;
     }
@@ -59,11 +61,11 @@ public class GameData : ScriptableObject
     NPCData[] npcDB = new NPCData[] {
         new(1,
             1,
-            new int[]{1,2,3}, 
-            new List<string>()),
+            new int[]{1,2,3},
+            new string[]{"starwars", "gatos"}),
          new(1,
             1,
             new int[]{1,2,3},
-            new List<string>())
+            new string[]{})
     };
 }
