@@ -25,6 +25,13 @@ public class Joke : MonoBehaviour
     public int value = 0;
 
     private TMP_Text text;
+    public TMP_Text txtTitle;
+    public TMP_Text txtTheme;
+    public TMP_Text txtDuration;
+    public TMP_Text txtAcidity;
+
+
+
     public GameObject ButtonPoint;
 
     private JokeData data;
@@ -77,7 +84,12 @@ public class Joke : MonoBehaviour
         data = newData;
         //id = newjokeid;
         text.text = data.Title;//.Substring(0, 60);
-      
+
+        txtTitle.text = data.Title;
+        txtTheme.text = data.Theme;
+        txtDuration.text = data.Duration + " min";
+        txtAcidity.text = data.Acidity.ToString();
+
     }
 
     public JokeData GetJokeData()
