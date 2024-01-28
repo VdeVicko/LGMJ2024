@@ -16,7 +16,6 @@ public struct JokeData
     public string Reference;
 
 
-
     public JokeData(
         int jokeId, 
         string title,
@@ -39,5 +38,4 @@ public struct JokeData
         Theme = theme;
         Reference = reference;
     }
-
 }

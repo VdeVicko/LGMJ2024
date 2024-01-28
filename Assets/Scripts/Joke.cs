@@ -11,8 +11,6 @@ using Image = UnityEngine.UI.Image;
 using Unity.VisualScripting;
 using System;
 
-
-
 public class Joke : MonoBehaviour
 {
     GameData gameData;
@@ -49,9 +47,7 @@ public class Joke : MonoBehaviour
 
     public void Start()
     {
-
         MyRT = GetComponent<RectTransform>();
-    
         text = GetComponentInChildren<TMP_Text>();
     }
 
@@ -67,16 +63,12 @@ public class Joke : MonoBehaviour
         if (MyRT.anchoredPosition3D.x > 304f)
         {
             Invoke("UpdateJoke", 2f);
-           
-
         }
-
     }
     public void Interaction()
     {
         value = 1;
         OnPressed = true;
-
     }
 
     public void SetJokeData(JokeData newData)
@@ -84,7 +76,6 @@ public class Joke : MonoBehaviour
         data = newData;
         //id = newjokeid;
         text.text = data.Text.Substring(0, 60);
-        
     }
 
     public JokeData GetJokeData()
@@ -110,9 +101,5 @@ public class Joke : MonoBehaviour
                 MyRT.position = new Vector3(-95.81305f, -155.5988f,0);
                 break;
         }
-
-
-
     }
 }
-

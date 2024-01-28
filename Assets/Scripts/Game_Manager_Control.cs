@@ -30,7 +30,7 @@ public class Game_Manager_Control : MonoBehaviour
     {
         SetupNPCs();
 
-        SetupJokeButtons(); 
+        SetupJokeButtons();
     }
 
     public void FinishJoke()
@@ -38,12 +38,10 @@ public class Game_Manager_Control : MonoBehaviour
         timer++;
         State = 3;
         //GenericJoke.value = 0;
-        Debug.Log("Joke finished.");
     }
 
     public void TellJoke()
     {
-        Debug.Log("Telling joke");
         FinishJoke();
     }
 
@@ -63,10 +61,7 @@ public class Game_Manager_Control : MonoBehaviour
                 JokeButtons[i].OnPressed = false;
             }
         }
-
     }
-
-
 
     void SetupNPCs()
     {
@@ -79,7 +74,6 @@ public class Game_Manager_Control : MonoBehaviour
             if (NPCs[i]) 
                 NPCs[i].SetData(npcData[i]);
         }
-
     }
 
     void SetupJokeButtons()
@@ -91,8 +85,6 @@ public class Game_Manager_Control : MonoBehaviour
             jokeButton.SetJokeData(newJoke);
         }
     }
-
-
 
     void ProcessSelectedJokeButton(Joke jokeButton)
     {
@@ -123,10 +115,4 @@ public class Game_Manager_Control : MonoBehaviour
         JokeResponceText.text = jokemeter.ToString() + "/" + "100";
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
-
-
-
-
-
-
 }
