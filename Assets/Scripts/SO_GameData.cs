@@ -43,6 +43,7 @@ public class GameData : ScriptableObject
             3,
             4,
             "tema",
+            1,
             "referencia"),
         new (2,
             "Alzhimer",
@@ -51,6 +52,7 @@ public class GameData : ScriptableObject
             3,
             4,
             "tema",
+            1,
             "referencia")
     };
 
