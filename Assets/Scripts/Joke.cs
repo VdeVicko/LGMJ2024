@@ -76,7 +76,7 @@ public class Joke : MonoBehaviour
     {
         data = newData;
         //id = newjokeid;
-        text.text = data.Text.Substring(0, 60);
+        text.text = data.Title;//.Substring(0, 60);
       
     }
 
