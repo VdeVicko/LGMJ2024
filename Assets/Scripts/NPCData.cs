@@ -17,9 +17,9 @@ public struct NPCData
     public string[] KnowReferences;
 
 
-    public NPCData(int generalHumor, int acidityResistance, int[] themes, string[] references )
+    public NPCData(int id, int generalHumor, int acidityResistance, int[] themes, string[] references )
     { 
-        Id = 0;
+        Id = id;
         GeneralHumor = generalHumor;
         AcidityResistance = acidityResistance;
         ThemeRecistance = themes;

@@ -46,7 +46,7 @@ new(1,"Conversando con las zapatillas 'Converse'","Estaba con un amigo el otro d
 new(2,"El alemán 'Alzheimer' del que no me olvido","Fui al médico el otro día porque estaba teniendo problemas de memoria. Le pregunto al doctor, '¿Quién es ese hombre alemán que me hace olvidar las cosas?' Y el doctor, sin perder el ritmo, me dice 'Alzheimer'. Yo pensé, 'Vaya, debe ser un tipo famoso, porque no hay día que no se me olvide su nombre.'",3,6,1,"Salud",1,"Alzheimer"),
 new(3,"Que se necesita para colgar un cuadro de Jesús","Estaba en una exposición de arte el otro día y me encontré con un cuadro de Jesús. Y empiezo a reflexionar sobre las diferencias entre el cuadro y el propio Jesús. Llegué a la conclusión de que solo necesitas un clavo para colgar el cuadro. Es un poco oscuro, lo sé, pero luego pensé que al menos el cuadro no te juzgará por tus pecados.",4,5,1,"Religion",8,""),
 new(4,"Chiste 4","El otro día, la mamá de mi esposa visitó a su medico y le pregunto: 'Doctor, ¿Qué me dijo antes? ¿Géminis, Libra?' Y él me responde con seriedad, 'Cáncer'. Ahí me di cuenta de que tal vez leer el  horóscopo  puede traer mas problemas de lo que parece.",3,3,0,"Esoterismo",3,""),
-new(5,"Chiste 5","Mi esposa toda la vida a sido esotérica, y ya cansa. El otro día me dice, vino un astrologo a ver a mi papa y me dijo que es cáncer. Yo sabiendo que si papá nació en diciembre le digo: Mujer, estás mal, tu papa no puede ser cáncer. Resulta que mi mujer también es disléxica, no el que vino no era astrologo, era oncólogo.",4,4,1,"Esoterismo",3,"Horoscopo"),
+new(5,"Chiste 5","Mi esposa toda la vida a sido esotérica, y ya cansa. El otro día me dice, vino un astrologo a ver a mi papa y me dijo que es cáncer. Yo sabiendo que si papá nació en diciembre le digo: Mujer, estás mal, tu papa no puede ser cáncer. Resulta que mi mujer también es disléxica, no el que vino no era astrologo, era oncólogo.",4,4,1,"Esoterismo",3,"Oncologo"),
 new(6,"Chiste 6","Escuché a dos jubilados charlando el otro día. Uno le dice al otro, 'Juan, estoy mal, cada mañana a las 7 voy al baño.' Y Juan, le responde, '¿Y eso qué tiene de malo?' 'Que me levanto a las 8.' Ah, la vejez, esa época de la vida en la que tu cuerpo se convierte en un despertador muy eficiente.",3,4,0,"Salud",1,""),
 new(7,"Chiste 7","Las mamas de ahora no son como las de antes. Yo tenia un vecinito que le decía a su mama, 'Mamá, mamá, ¿me das una galleta?' Y ella, le dice 'Están encima de la nevera.' Pero el niño insiste, 'Mamá, es que no tengo brazos.' Y la madre, le responde, 'Ah… sin brazos no hay galletas.' Pobre mi amigo, le decíamos capitán Garfio.",4,7,2,"Salud",1,""),
 new(8,"Chiste 8","Estaba pensando el otro día sobre cómo la infancia varía tanto dependiendo de dónde creces. Me acordé de esta historia de dos niños, uno rico y otro pobre, hablando sobre sus comidas en casa. El niño rico, presumiendo un poco, le dice al niño pobre, 'En mi casa comemos a la carta: lo que pedimos, nos lo sirven.' Imagínense, menú personalizado en casa, el sueño de todo gourmet infantil. Pero el niño pobre, sin perder el ritmo, le contesta, 'Ah, eso no es nada. En mi casa también comemos a la carta, pero es un poco diferente: el que saca la carta más alta, come.",6,6,1,"",0,""),
@@ -65,14 +65,21 @@ new(20,"Chiste 20","Viajar en avión se supone que es un lujo. Pero, ¿alguna vez 
 new(21,"Chiste 21","Ahora todo el mundo está obsesionado con los autos eléctricos. 'Salva el medio ambiente', dicen. Pero nadie habla de la ansiedad de quedarse sin batería en medio de la nada. Al menos con la gasolina, puedes caminar avergonzado a una estación. Con un eléctrico, ¿Qué haces? ¿Le pides a un granjero que te deje enchufar tu auto a una de sus vacas? Es decir, se que los granjeros hacen cosas raras, pero no creo que lleguen a ese extremo",5,7,2,"Tecnología",4,"")
     };
 
-    NPCData[] npcDB = new NPCData[] {
-        new(1,
-            1,
-            new int[]{1,2,3},
-            new string[]{"starwars", "gatos"}),
-         new(1,
-            1,
-            new int[]{1,2,3},
-            new string[]{})
+    NPCData[] npcDB = new NPCData[]
+    {
+new(1,5,8, new int[]{2,2,2,3,1,0,1,1}, new string[]{}),
+new(2,3,9, new int[]{1,3,2,2,1,1,2,1}, new string[]{"Alzheimer"}),
+new(3,4,7, new int[]{2,3,3,4,0,0,1,1}, new string[]{"Oncologo"}),
+new(4,6,10,new int[]{1,2,2,3,2,0,0,1}, new string[]{}),
+new(5,2,7, new int[]{0,3,3,1,0,1,2,1}, new string[]{"Partículas"}),
+new(6,1,5, new int[]{1,2,2,2,1,0,1,1}, new string[]{}),
+new(7,3,4, new int[]{1,2,0,0,1,0,2,1}, new string[]{"Partículas", "Oncologo"}),
+new(8,5,6, new int[]{1,1,4,4,1,1,1,1}, new string[]{}),
+new(9,3,10,new int[]{1,1,2,2,0,1,1,1}, new string[]{}),
+new(10,1,2,new int[]{0,4,1,1,1,0,0,0}, new string[]{"Partículas"}),
+new(11,2,4,new int[]{0,1,1,0,0,0,1,0}, new string[]{"Alzheimer"}),
+new(12,4,8,new int[]{3,1,4,3,2,0,3,3}, new string[]{}),
+new(13,3,4,new int[]{2,1,2,2,4,1,2,2}, new string[]{}),
+new(14,2,2,new int[]{1,2,2,3,4,1,2,1}, new string[]{})
     };
 }
