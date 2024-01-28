@@ -11,12 +11,11 @@ using UnityEngine.UIElements;
 public class GameData : ScriptableObject
 {
     public Joke CurrentJoke = null;
-    public float Score = 0;
-    public float HappinessTotal = 0;
-    public float IrritationTotal = 0;
-    public float SuccessTotal = 0;
-    public float indictment = 0;
-    public float Popularity = 0;
+    public float Success = 0;
+    public float Claps = 0;
+    public float Critic = 0;
+    public int Follower = 0;
+
 
     public NPCData[] GetNPCDataByLevel(int levelId)
     {
