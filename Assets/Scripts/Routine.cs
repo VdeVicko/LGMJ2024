@@ -21,7 +21,7 @@ public class Routine : MonoBehaviour
         
     }
 
-    void TellJoke(JokeData jokedata)
+    public void TellJoke(JokeData jokedata)
     {
         //duration = jokedata.duration;
         tellingJoke = true;
