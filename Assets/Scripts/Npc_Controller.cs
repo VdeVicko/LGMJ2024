@@ -15,7 +15,7 @@ public class Npc_Controller : MonoBehaviour
     //JokeResponce currentJokeResponce;
 
 
-    public Rigidbody rb;
+    
     public Game_Manager_Control GM;
     private SpriteRenderer sprite;
 
@@ -40,7 +40,7 @@ public class Npc_Controller : MonoBehaviour
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>(); 
+       
 
 
         //Resistance = new int[ResistanceCount];
