@@ -19,13 +19,16 @@ public class Game_Manager_Control : MonoBehaviour
     public TMP_Text JokeResponceText;
     public List<Joke> JokeButtons;
     public List<Npc_Controller> NPCs;
+    public CinemachineVirtualCamera cam1;
+    public CinemachineVirtualCamera cam2;
 
     private float jokemeter;
     JokeData currentJokeData;
 
     public void Start()
     {
-        Invoke("Initialize", 1f);
+        TrantitionInit(cam1, cam2);
+        Invoke("Initialize", 0.1f);
     }
 
     void Initialize()
