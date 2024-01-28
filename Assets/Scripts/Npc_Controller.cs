@@ -118,7 +118,13 @@ public class Npc_Controller : MonoBehaviour
 
     public void ProcessJoke(JokeData jokeData)
     {
-        bool knowReference = jokeData.Reference.Length != 0 ? data.KnowReferences.Contains(jokeData.Reference) : true;
+        Debug.Log("ProcessJoke joke=" + jokeData.JokeId.ToString() + " public=" + data.Id);
+
+        List<string> references = new List<string>(data.KnowReferences);
+
+        bool know = references.Contains(jokeData.Reference);
+
+        bool knowReference = jokeData.Reference.Length != 0 ? know : true;
 
         float themeResistance = 0;
         

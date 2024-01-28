@@ -112,7 +112,10 @@ public class Game_Manager_Control : MonoBehaviour
 
     public void ProcessTellJokeCompleted()
     {
-        float totalResponce = 0;
+        Debug.Log("ProcessTellJokeCompleted " + currentJokeData.JokeId.ToString());
+
+
+       float totalResponce = 0;
 
         // Procesar broma por el publico
         foreach (var npc in NPCs)

@@ -14,10 +14,10 @@ public struct NPCData
 
     public int[] ThemeRecistance;
 
-    public List<string> KnowReferences;
+    public string[] KnowReferences;
 
 
-    public NPCData(int generalHumor, int acidityResistance, int[] themes, List<string> references )
+    public NPCData(int generalHumor, int acidityResistance, int[] themes, string[] references )
     { 
         Id = 0;
         GeneralHumor = generalHumor;
