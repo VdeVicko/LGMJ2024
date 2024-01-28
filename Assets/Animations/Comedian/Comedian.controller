@@ -86,13 +86,13 @@ AnimatorStateMachine:
     m_Position: {x: -80, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3881900930082457990}
-    m_Position: {x: 330, y: 300, z: 0}
+    m_Position: {x: 300, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1187140486197546875}
-    m_Position: {x: 520, y: 470, z: 0}
+    m_Position: {x: 540, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 482361330714459728}
-    m_Position: {x: 190, y: 470, z: 0}
+    m_Position: {x: 60, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4007455037673379446}
     m_Position: {x: 320, y: 640, z: 0}
@@ -210,25 +210,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: PunchLine
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: EspecaiPunchLine
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Irritation
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

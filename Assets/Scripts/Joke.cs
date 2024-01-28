@@ -15,7 +15,7 @@ public class Joke : MonoBehaviour
 {
     GameData gameData;
 
-    int i = 0;
+   
     public bool moving = false;
     public int id;
 
