@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class Game_Manager_Control : MonoBehaviour
 {
     const float AVERAGE_RESPONCE_MULTIPLIER = 2.5f;
+    const float DEFAUlT_SHOW_DURATION = 30;
     public float timer = 0;
     public GameData gameData;
     public int State;
@@ -19,16 +20,18 @@ public class Game_Manager_Control : MonoBehaviour
     //References
     public Routine ComedianRoutine;
     public TMP_Text JokeResponceText;
-    
     public List<Joke> JokeButtons;
     public List<Npc_Controller> NPCs;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
-
     public Slider JokemeterSlider;
+    public Animator ComedianShowResultAnimatior;
+
 
     private float jokemeter;
     JokeData currentJokeData;
+    private float showTime;
+    private float showResult;
 
     public void Start()
     {
@@ -43,18 +46,13 @@ public class Game_Manager_Control : MonoBehaviour
         SetupJokeButtons();
 
         ComedianRoutine.MyGM = this;
+
+        showTime = DEFAUlT_SHOW_DURATION;
     }
 
-    public void FinishJoke()
-    {
-        timer++;
-        State = 3;
-    }
 
-    public void TellJoke()
-    {
-        FinishJoke();
-    }
+
+
 
     private void Update()
     {
@@ -137,7 +135,41 @@ public class Game_Manager_Control : MonoBehaviour
         JokemeterSlider.value = jokemeter; //JokeResponceText.text = jokemeter.ToString() + "/ 100";
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
 
-   }
+        // Reducir tiempo
+        showTime -= currentJokeData.Duration;
+
+        // Evaluar si terminóel show
+        if (showTime <= 0.1 || jokemeter <= -100)
+        {
+            FinishShow();
+        }
+    }
+
+    void FinishShow()
+    {
+        if (jokemeter < 0)
+        {
+            showResult = -1;
+        }
+        else if (jokemeter > 50)
+        {
+            showResult = 2;
+        }
+        else
+        {
+            showResult = 1;
+        }
+
+        if (ComedianShowResultAnimatior)
+            ComedianShowResultAnimatior.SetFloat("showResult", showResult);
+    }
+
+
+
+
+
+
+
 
     public void TrantitionInit(CinemachineVirtualCamera a, CinemachineVirtualCamera b)
     {
