@@ -941,6 +941,8 @@ MonoBehaviour:
   - {fileID: 1083895335}
   - {fileID: 924084609}
   - {fileID: 1889553630}
+  cam1: {fileID: 2100254441}
+  cam2: {fileID: 1419069387}
 --- !u!4 &758167120
 Transform:
   m_ObjectHideFlags: 0
