@@ -6,6 +6,7 @@ using UnityEditor.Build;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
 using TMPro;
+using Cinemachine;
 
 public class Game_Manager_Control : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Game_Manager_Control : MonoBehaviour
 
     public void Start()
     {
-        Invoke("Initialize", 0.1f);
+        Invoke("Initialize", 2f);
     }
 
     void Initialize()
@@ -125,5 +126,10 @@ public class Game_Manager_Control : MonoBehaviour
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
     }
 
+    public void TrantitionInit(CinemachineVirtualCamera a, CinemachineVirtualCamera b)
+    {
+        
+        b.Priority = a.Priority + 1;
+    }
 
 }

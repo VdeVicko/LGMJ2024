@@ -44,5 +44,7 @@ public class Routine : MonoBehaviour
         animator.SetBool("PunchLine", true);
         yield return new WaitForSeconds(duration);
         animator.SetBool("PunchLine", false);
+        MyGM.ProcessTellJokeCompleted();
+       
     }
 }

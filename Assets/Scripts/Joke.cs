@@ -47,17 +47,16 @@ public class Joke : MonoBehaviour
 
     public void Start()
     {
-        MyRT = GetComponent<RectTransform>();
-        text = GetComponentInChildren<TMP_Text>();
+        Invoke("SetupCanvas", 1.9f);
     }
 
     public void Update()
     {
         if (OnPressed )
         { 
-            while(i<120f)
+            
             MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
-            i++;
+           
         }
 
         if (MyRT.anchoredPosition3D.x > 304f)
@@ -101,5 +100,11 @@ public class Joke : MonoBehaviour
                 MyRT.position = new Vector3(-95.81305f, -155.5988f,0);
                 break;
         }
+    }
+
+     public void SetupCanvas()
+    {
+        MyRT = GetComponent<RectTransform>();
+        text = GetComponentInChildren<TMP_Text>();
     }
 }
