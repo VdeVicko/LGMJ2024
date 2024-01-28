@@ -47,12 +47,13 @@ public class Joke : MonoBehaviour
 
     public void Start()
     {
+
         Invoke("SetupCanvas", 1.9f);
     }
 
     public void Update()
     {
-        if (OnPressed )
+       /* if (OnPressed)
         { 
             
             MyRT.anchoredPosition3D = Vector3.SmoothDamp(MyRT.anchoredPosition3D, MyRT.anchoredPosition3D - new Vector3(-130, 0, 0), ref velocity, 0.1f);
@@ -62,7 +63,7 @@ public class Joke : MonoBehaviour
         if (MyRT.anchoredPosition3D.x > 304f)
         {
             Invoke("UpdateJoke", 2f);
-        }
+        } */
     }
     public void Interaction()
     {
