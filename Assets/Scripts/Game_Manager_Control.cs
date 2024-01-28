@@ -25,7 +25,7 @@ public class Game_Manager_Control : MonoBehaviour
 
     public void Start()
     {
-        Invoke("Initialize", 0.2f);
+        Invoke("Initialize", 1f);
     }
 
     void Initialize()

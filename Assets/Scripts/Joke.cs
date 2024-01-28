@@ -48,7 +48,7 @@ public class Joke : MonoBehaviour
     public void Start()
     {
 
-        Invoke("SetupCanvas", 1.9f);
+        Invoke("SetupCanvas", 0.2f);
     }
 
     public void Update()
