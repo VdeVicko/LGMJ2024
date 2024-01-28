@@ -101,6 +101,7 @@ public class Game_Manager_Control : MonoBehaviour
         currentJokeData = jokeButton.GetJokeData();
         JokeData newJoke = gameData.GetNewRandomJoke();
         jokeButton.SetJokeData(newJoke);
+        jokeButton.moving = true;
         Debug.Log("Nueva broma obtenida: " + newJoke.JokeId.ToString());
 
         // Ejecutar animacion de contar broma
