@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class Game_Manager_Control : MonoBehaviour
 {
+    const float AVERAGE_RESPONCE_MULTIPLIER = 2.5f;
     public float timer = 0;
     public GameData gameData;
     public int State;
@@ -125,15 +126,15 @@ public class Game_Manager_Control : MonoBehaviour
             totalResponce += npc.CurrentJokeResponce;
         }
 
-        Debug.Log("Respuesta general actual: " + totalResponce.ToString());
+        float averageResponce = totalResponce * AVERAGE_RESPONCE_MULTIPLIER / NPCs.Count;
 
-        jokemeter += totalResponce;
+        Debug.Log("Respuesta general actual=" + totalResponce.ToString() + " promedio=" + averageResponce.ToString());
+
+        jokemeter += averageResponce;
 
         //Actualizar chistometro
-        JokeResponceText.text = jokemeter.ToString() + "/ 100";
+        JokemeterSlider.value = jokemeter; //JokeResponceText.text = jokemeter.ToString() + "/ 100";
         Debug.Log("Respuesta general total: " + jokemeter.ToString());
-        float adjustedJokemeter = jokemeter / 2;
-        JokemeterSlider.value = jokemeter;
 
    }
 
