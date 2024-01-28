@@ -30,6 +30,7 @@ public class Game_Manager_Control : MonoBehaviour
     public RawImage JokeImage;
     public GameObject GamePlayUI;
     public GameObject ResultUI;
+    public TMP_Text TextTime;
 
     public TMP_Text ResultShow;
     public TMP_Text ResultHaters;
@@ -67,6 +68,7 @@ public class Game_Manager_Control : MonoBehaviour
 
         showTime = DEFAUlT_SHOW_DURATION;
 
+
         StartCoroutine(WaitIntroAnimation());
     }
 
@@ -77,7 +79,6 @@ public class Game_Manager_Control : MonoBehaviour
 
         GamePlayUI.SetActive(true);
 
-
         StartCoroutine(WaitUILoad());
     }
 
@@ -86,7 +87,11 @@ public class Game_Manager_Control : MonoBehaviour
         yield return new WaitForSeconds(.1f);
 
         SetupJokeButtons();
+
+        //InvokeRepeating("TimeTick", 0f, 1);
+
     }
+    
 
 
 
@@ -105,6 +110,7 @@ public class Game_Manager_Control : MonoBehaviour
                 JokeButtons[i].OnPressed = false;
             }
         }
+
     }
 
     void SetupNPCs()
@@ -179,6 +185,11 @@ public class Game_Manager_Control : MonoBehaviour
 
         // Reducir tiempo
         showTime -= currentJokeData.Duration;
+
+        showTime = Math.Clamp(showTime, 0, 10000);
+
+        TextTime.text = showTime.ToString() + " min";
+
         Debug.Log(showTime);
         // Evaluar si terminóel show
         if (showTime <= 0.1f || jokemeter <= -100)
@@ -222,10 +233,13 @@ public class Game_Manager_Control : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         ComedianShowResultAnimatior.SetFloat("showResult", 0);
-
         GamePlayUI.SetActive(false);
 
         TrantitionInit(cam2, cam1);
+
+        yield return new WaitForSeconds(3f);
+
+        ResultUI.SetActive(true);
     }
 
 
